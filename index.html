@@ -6,7 +6,7 @@
     <title>Ali Photographer International</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* ثيم الخلفية الفخم (الزجاجي) */
+        /* ثيم الخلفية الفخم وأنيميشن الظهور */
         body { 
             background: radial-gradient(circle at top right, #1a1a1a, #000000);
             background-attachment: fixed;
@@ -14,22 +14,55 @@
             font-family: 'Cairo', sans-serif; 
             text-align: center; 
             margin: 0; 
-            padding: 20px; 
+            padding: 0; 
+            overflow-x: hidden;
+        }
+
+        /* العداد التنازلي الأعلى المتنقل */
+        .top-timer-bar {
+            background: linear-gradient(90deg, #d4af37, #b59226);
+            color: #000;
+            padding: 10px;
+            font-size: 13px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+        .coming-soon-badge {
+            background: #000;
+            color: #d4af37;
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-size: 11px;
+            text-transform: uppercase;
         }
 
         .container { 
             max-width: 450px; 
-            margin: auto; 
+            margin: 30px auto; 
             border: 1px solid rgba(212, 175, 55, 0.2); 
             padding: 25px; 
             border-radius: 30px; 
             background: rgba(15, 15, 15, 0.8); 
             backdrop-filter: blur(10px); 
             box-shadow: 0 10px 30px rgba(0,0,0,0.8); 
+            animation: fadeInPage 1s ease-in-out;
+        }
+
+        /* أنيميشن فخم لظهور الصفحة */
+        @keyframes fadeInPage {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* تنسيق صورة البروفايل الفخمة */
-        .profile-area { position: relative; margin-bottom: 20px; margin-top: 10px; }
+        .profile-area { position: relative; margin-bottom: 15px; margin-top: 10px; }
         .profile-pic {
             width: 120px;
             height: 120px;
@@ -42,8 +75,31 @@
         }
 
         h1 { color: #d4af37; font-size: 22px; margin: 15px 0 5px; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
-        .subtitle { color: #aaa; font-size: 14px; margin-bottom: 20px; }
+        .subtitle { color: #aaa; font-size: 14px; margin-bottom: 15px; }
         
+        /* زر البورتفوليو الفخم الجديد */
+        .btn-portfolio {
+            background: transparent;
+            color: #d4af37;
+            border: 2px solid #d4af37;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: 'Cairo';
+            transition: 0.3s;
+            margin-bottom: 25px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-portfolio:hover {
+            background: #d4af37;
+            color: #000;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
         /* الرسالة الترحيبية الشيك */
         .welcome-message { 
             background: rgba(212, 175, 55, 0.05);
@@ -58,7 +114,7 @@
         
         .section-title { text-align: right; color: #d4af37; border-right: 3px solid #d4af37; padding-right: 10px; margin: 30px 0 15px 0; font-size: 16px; font-weight: bold; }
         
-        /* شكل الباكدجات الزجاجي المودرن */
+        /* شكل الباكدجات وأنيميشن الانزلاق الناعم عند التحميل */
         .package { 
             background: rgba(255, 255, 255, 0.03); 
             border-radius: 20px; 
@@ -69,8 +125,14 @@
             align-items: center; 
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: 0.3s;
+            animation: slideInUp 0.6s ease-in-out both;
         }
-        .package:hover { border-color: #d4af37; background: rgba(212, 175, 55, 0.05); }
+        .package:hover { border-color: #d4af37; background: rgba(212, 175, 55, 0.05); transform: translateY(-2px); }
+
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
         .package-details { text-align: right; }
         .package-details strong { font-size: 15px; color: #fff; }
@@ -78,8 +140,27 @@
         
         .price-box { display: flex; flex-direction: column; align-items: center; gap: 8px; }
         .price { background: #d4af37; color: #000; padding: 6px 12px; border-radius: 10px; font-weight: bold; font-size: 13px; }
-        .btn-select { background: transparent; color: #d4af37; border: 1px solid #d4af37; padding: 5px 12px; border-radius: 8px; font-size: 11px; cursor: pointer; font-family: 'Cairo'; transition: 0.3s; }
-        .btn-select:hover { background: #d4af37; color: #000; }
+        
+        /* تأثير الإضاءة النبضي (Glow) حول زر احجز الآن */
+        .btn-select { 
+            background: transparent; 
+            color: #d4af37; 
+            border: 1px solid #d4af37; 
+            padding: 5px 12px; 
+            border-radius: 8px; 
+            font-size: 11px; 
+            cursor: pointer; 
+            font-family: 'Cairo'; 
+            transition: 0.3s;
+            animation: pulseGlow 2s infinite;
+        }
+        .btn-select:hover { background: #d4af37; color: #000; box-shadow: 0 0 10px #d4af37; }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+            70% { box-shadow: 0 0 0 6px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
         
         /* قائمة الإضافات (Extra) */
         .extra-list { background: rgba(255, 255, 255, 0.02); border-radius: 20px; padding: 15px; border: 1px solid rgba(255, 255, 255, 0.05); }
@@ -101,6 +182,13 @@
         .social-item.whatsapp-link { background: rgba(37, 211, 102, 0.1); border-color: rgba(37, 211, 102, 0.3); }
         .social-item.whatsapp-link:hover { border-color: #25d366; color: #25d366; }
         
+        /* سلايدر آراء العملاء التلقائي الأنيق */
+        .testimonials-container { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 20px; padding: 20px; overflow: hidden; position: relative; margin-top: 20px; height: 95px; }
+        .testimonial-slide { display: none; text-align: center; animation: fadeTesti 0.8s ease-in-out; }
+        .testimonial-slide p { font-size: 13px; color: #e0e0e0; font-style: italic; margin: 0 0 10px 0; }
+        .testimonial-slide span { font-size: 11px; color: #d4af37; font-weight: bold; }
+        @keyframes fadeTesti { from { opacity: 0; } to { opacity: 1; } }
+
         /* الفوتر وتوقيع المصمم POPO */
         .footer { margin-top: 40px; font-size: 11px; color: #555; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px; }
         .designer-signature { font-size: 9px; color: #444; letter-spacing: 2px; text-transform: uppercase; margin-top: 8px; display: block; }
@@ -112,20 +200,34 @@
         .popup label { display: block; margin: 12px 0 5px; font-size: 13px; color: #d4af37; }
         .popup input, .popup textarea { width: 100%; padding: 12px; background: #1a1a1a; border: 1px solid #333; border-radius: 10px; color: #fff; font-family: 'Cairo'; box-sizing: border-box; font-size: 13px; }
         
-        /* تنسيق خيارات الراديو ومربع الصح الجديد */
+        /* تنسيق خيارات الراديو والمجموعات الذكية */
         .radio-group { background: rgba(255,255,255,0.02); padding: 10px; border-radius: 10px; border: 1px solid #222; margin-top: 5px; }
         .radio-label { display: flex !important; align-items: center; gap: 8px; color: #ccc !important; font-size: 12px !important; cursor: pointer; margin: 8px 0 !important; }
         .radio-label input { width: auto !important; margin: 0; cursor: pointer; }
         
+        /* شكل قائمة الاختيارات في الباكدج المخصصة */
+        .calc-item { display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.03); padding: 10px; border-radius: 10px; margin-bottom: 8px; font-size: 13px; }
+        .calc-item input { width: auto !important; cursor: pointer; }
+        .total-price-box { background: #d4af37; color: #000; padding: 12px; border-radius: 12px; text-align: center; font-weight: bold; margin-top: 15px; font-size: 15px; }
+
         .checkbox-label { display: flex !important; align-items: flex-start; gap: 8px; color: #ffbcbc !important; font-size: 11px !important; cursor: pointer; margin: 15px 0 5px 0 !important; line-height: 1.4; background: rgba(255, 0, 0, 0.05); padding: 10px; border-radius: 10px; border: 1px dashed rgba(255, 0, 0, 0.2); }
         .checkbox-label input { width: auto !important; margin-top: 3px; cursor: pointer; }
 
         .popup-btns { display: flex; gap: 10px; margin-top: 20px; }
         .btn-confirm { background: #d4af37; color: #000; border: none; padding: 12px; border-radius: 12px; font-weight: bold; flex: 2; cursor: pointer; font-family: 'Cairo'; font-size: 14px; }
         .btn-cancel { background: #222; color: #fff; border: none; padding: 12px; border-radius: 12px; flex: 1; cursor: pointer; font-family: 'Cairo'; font-size: 14px; }
+
+        /* ستايل معرض الصور المصغر البوب آب */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 15px; }
+        .portfolio-grid img { width: 100%; height: 130px; object-fit: cover; border-radius: 12px; border: 1px solid rgba(212,175,55,0.3); }
     </style>
 </head>
 <body>
+
+<div class="top-timer-bar">
+    <span>🔥 خصم لفترة محدودة على الباكدج الكاملة! ينتهي العرض خلال: <span id="countdown-timer">00d 00h 00m 00s</span></span>
+    <span class="coming-soon-badge">Soon</span>
+</div>
 
 <div class="container">
     <div class="profile-area">
@@ -135,13 +237,26 @@
     <h1>Ali Photographer International</h1>
     <div class="subtitle">Professional Photographer</div>
 
+    <button class="btn-portfolio" onclick="openPortfolio()">📷 معرض أعمالنا (Portfolio)</button>
+
     <div class="welcome-message">
         ✨ "يومكم المميز هو أمانة في قلبي قبل عدستي.. شكراً لثقتكم التي تجعل من عملي فناً" 🤍
     </div>
 
     <div class="section-title">العروض والباكدجات</div>
     
-    <div class="package">
+    <div class="package" style="border: 1px solid #d4af37; background: rgba(212, 175, 55, 0.08);">
+        <div class="package-details">
+            <strong style="color: #d4af37;">✨ صمم باكدج على ذوقك (حساب مخصص)</strong>
+            <p>اختار السيشن والخدمات والإضافات اللي تحبها واحسب سعرك فوري</p>
+        </div>
+        <div class="price-box">
+            <span class="price" style="background:#fff; color:#000;">💸 مرن</span>
+            <button class="btn-select" onclick="openCustomCalc()">احجز الآن</button>
+        </div>
+    </div>
+    
+    <div class="package" style="animation-delay: 0.1s;">
         <div class="package-details">
             <strong>باكدج كاملة (Full Day)</strong>
             <p>سيشن + بارتي + ريلز + تجهيزات + ألبوم</p>
@@ -152,7 +267,7 @@
         </div>
     </div>
 
-    <div class="package">
+    <div class="package" style="animation-delay: 0.2s;">
         <div class="package-details">
             <strong>الباكدج العادية</strong>
             <p>سيشن + بارتي + ألبوم</p>
@@ -163,7 +278,7 @@
         </div>
     </div>
 
-    <div class="package">
+    <div class="package" style="animation-delay: 0.3s;">
         <div class="package-details">
             <strong>خطوبة أو كتب كتاب</strong>
             <p>تغطية كاملة وتصوير احترافي للمناسبة</p>
@@ -175,19 +290,19 @@
     </div>
 
     <div class="section-title">سيشن فردي</div>
-    <div class="package">
+    <div class="package" style="animation-delay: 0.4s;">
         <div class="package-details"><strong>تصوير سيشن</strong><p>جلسة تصوير خارجي احترافية مخصصة</p></div>
         <div class="price-box"><span class="price">3000 EGP</span><button class="btn-select" onclick="openBooking('سيشن فردي')">احجز الآن</button></div>
     </div>
-    <div class="package">
+    <div class="package" style="animation-delay: 0.5s;">
         <div class="package-details"><strong>تصوير بارتي</strong><p>تغطية وتصوير الحفلة أو المناسبة</p></div>
         <div class="price-box"><span class="price">1500 EGP</span><button class="btn-select" onclick="openBooking('بارتي فردي')">احجز الآن</button></div>
     </div>
-    <div class="package">
+    <div class="package" style="animation-delay: 0.6s;">
         <div class="package-details"><strong>تجهيزات</strong><p>تصوير كواليس وتجهيزات العروسين</p></div>
         <div class="price-box"><span class="price">1000 EGP</span><button class="btn-select" onclick="openBooking('تجهيزات')">احجز الآن</button></div>
     </div>
-    <div class="package">
+    <div class="package" style="animation-delay: 0.7s;">
         <div class="package-details"><strong>تصوير ريلز</strong><p>فيديو قصير ومونتاج سينمائي سريع</p></div>
         <div class="price-box"><span class="price">1000 EGP</span><button class="btn-select" onclick="openBooking('ريلز فردي')">احجز الآن</button></div>
     </div>
@@ -207,7 +322,7 @@
         <div class="extra-item"><span class="extra-name">📸 كاميرا إضافية</span><span class="extra-price">+ 1000 EGP</span></div>
         <div class="extra-item"><span class="extra-name">💾 تسليم الصور على فلاشة</span><span class="extra-price">EGP</span></div>
         <div class="extra-item"><span class="extra-name">🖼️ تابلوه علي حسب الحجم</span><span class="extra-price">EGP</span></div>
-        <div class="extra-item"><span class="extra-name">📱 ريلز (Reels) إفاضي</span><span class="extra-price">+ 1000 EGP</span></div>
+        <div class="extra-item"><span class="extra-name">📱 ريلز (Reels) إضافي</span><span class="extra-price">+ 1000 EGP</span></div>
         <div class="extra-item" style="border-top: 1px solid rgba(255,255,255,0.05); margin-top: 5px; padding-top: 10px;"><span class="extra-name">🎥 برومو (تصوير سيشن وقاعة)</span><span class="extra-price">EGP</span></div>
         <div class="extra-item"><span class="extra-name">🎥 برومو (تصوير سيشن فقط)</span><span class="extra-price">EGP</span></div>
         <div class="extra-item"><span class="extra-name">🎥 برومو (تصوير قاعة فقط)</span><span class="extra-price">EGP</span></div>
@@ -216,7 +331,23 @@
     <div class="section-title">عنوان الاستوديو</div>
     <div class="address-box">
         <p>📍 <strong>دايموند استوديو:</strong><br>نزله دائري الوراق - أمام اسماعيلكوا - مبنى سرايا الديب</p>
-        <a href="https://maps.google.com/?q=نزله+دائري+الوراق" target="_blank" class="btn-location">🗺️ افتح موقعنا على الخريطة</a>
+        <a href="http://googleusercontent.com/maps.google.com/6" target="_blank" class="btn-location">🗺️ افتح موقعنا على الخريطة</a>
+    </div>
+
+    <div class="section-title">قالوا عن عدستنا 💬</div>
+    <div class="testimonials-container">
+        <div class="testimonial-slide">
+            <p>"بجد التصوير كان فوق الخيال والذوق والالتزام بالمواعيد مفيش بعد كدة شكراً يا فنان!"</p>
+            <span>✨ أ/ أحمد & د/ سارة</span>
+        </div>
+        <div class="testimonial-slide">
+            <p>"الألبوم طالع تحفة والألوان بجد سينمائية وريلز الفرح مكسر الدنيا عندنا تسلم إيدك"</p>
+            <span>✨ كابتن محمد & أ/ مي</span>
+        </div>
+        <div class="testimonial-slide">
+            <p>"علي مش مجرد مصور شاطر ده بجد ريحنا جداً في يومنا وطلع أجمل كواليس وضحكة دافية"</p>
+            <span>✨ المهندس عمر & أ/ نادين</span>
+        </div>
     </div>
 
     <div class="section-title">تابعنا على</div>
@@ -233,13 +364,30 @@
     </div>
 </div>
 
+<div id="portfolioPopup" class="popup">
+    <div class="popup-content" style="max-width: 420px;">
+        <h3>📸 معرض بعض أعمالنا</h3>
+        <p style="text-align: center; font-size: 11px; color: #aaa;">لقطات مميزة من نبض عدسة الفنان علي</p>
+        <div class="portfolio-grid">
+            <img src="photo1.jpg" alt="تصوير علي فوتوغرافير">
+            <img src="photo2.jpg" alt="تصوير سيشن عرسان">
+            <img src="photo3.jpg" alt="تصوير قاعات فرح">
+            <img src="photo4.jpg" alt="تصوير كواليس عروسة">
+        </div>
+        <button class="btn-cancel" onclick="closePortfolio()" style="width: 100%; margin-top: 15px;">إغلاق المعرض</button>
+    </div>
+</div>
+
 <div id="bookingPopup" class="popup">
     <div class="popup-content">
         <h3>تفاصيل الحجز 📝</h3>
         <p id="selectedPackageText" style="color:#d4af37; font-size:12px; text-align:center; margin-bottom: 10px;"></p>
         
-        <label>اسم العريس والعروسة:</label>
-        <input type="text" id="names" placeholder="الأسماء بالكامل">
+        <label>اسم العريس ( English ):</label>
+        <input type="text" id="groomName" placeholder="Groom's Full Name" style="direction: ltr; text-align: left;">
+
+        <label>اسم العروسة ( English ):</label>
+        <input type="text" id="brideName" placeholder="Bride's Full Name" style="direction: ltr; text-align: left;">
 
         <label>رقم الواتساب للتواصل:</label>
         <input type="tel" id="clientWhatsapp" placeholder="اكتب رقمك هنا">
@@ -255,14 +403,8 @@
 
         <label>هل توافق على مشاركة تفاصيل اليوم والصور على مواقع التواصل؟</label>
         <div class="radio-group">
-            <label class="radio-label">
-                <input type="radio" name="mediaShare" value="موافق على النشر في Facebook, Instagram, TikTok" checked>
-                موافق على النشر في Facebook, Instagram, TikTok
-            </label>
-            <label class="radio-label">
-                <input type="radio" name="mediaShare" value="لا مش حابب أشارك أي صور على مواقع التواصل">
-                لا مش حابب أشارك أي صور على مواقع التواصل
-            </label>
+            <label class="radio-label"><input type="radio" name="mediaShare" value="موافق على النشر في Facebook, Instagram, TikTok" checked> موافق على النشر في Facebook, Instagram, TikTok</label>
+            <label class="radio-label"><input type="radio" name="mediaShare" value="لا مش حابب أشارك أي صور على مواقع التواصل"> لا مش حابب أشارك أي صور على مواقع التواصل</label>
         </div>
 
         <label class="checkbox-label">
@@ -274,58 +416,187 @@
         <textarea id="notes" rows="2" placeholder="اكتب ملاحظاتك أو أي إضافات تانية هنا..."></textarea>
         
         <div class="popup-btns">
-            <button class="btn-confirm" onclick="sendToWhatsapp()">تأكيد عبر واتساب 🚀</button>
+            <button class="btn-confirm" onclick="sendToWhatsapp(false)">تأكيد عبر واتساب 🚀</button>
             <button class="btn-cancel" onclick="closePopup()">إلغاء</button>
+        </div>
+    </div>
+</div>
+
+<div id="customCalcPopup" class="popup">
+    <div class="popup-content">
+        <h3>✨ صمم باكدج على ذوقك</h3>
+        <p style="text-align: center; color: #aaa; font-size: 11px; margin-bottom: 15px;">علم صح على الخدمات اللي تناسب فرحك والموقع هيحسبها</p>
+        
+        <div class="calc-item"><label><input type="checkbox" class="calc-check" data-price="3000" data-name="تصوير سيشن"> 📸 تصوير سيشن خارجي</label> <span>3000 ج</span></div>
+        <div class="calc-item"><label><input type="checkbox" class="calc-check" data-price="1500" data-name="تصوير بارتي"> 🥳 تصوير بارتي (حفلة)</label> <span>1500 ج</span></div>
+        <div class="calc-item"><label><input type="checkbox" class="calc-check" data-price="1000" data-name="تجهيزات كواليس"> 👰 تجهيزات وكواليس</label> <span>1000 ج</span></div>
+        <div class="calc-item"><label><input type="checkbox" class="calc-check" data-price="1000" data-name="تصوير ريلز سينمائي"> 📱 تصوير ريلز سينمائي</label> <span>1000 ج</span></div>
+        <div class="calc-item"><label><input type="checkbox" class="calc-check" data-price="1000" data-name="كاميرا إضافية"> 🎥 كاميرا تصوير إضافية</label> <span>1000 ج</span></div>
+        <div class="calc-item"><label><input type="checkbox" class="calc-check" data-price="1000" data-name="ألبوم أكريليك + تابلوه"> 🖼️ ألبوم أكريليك + تابلوه</label> <span>1000 ج</span></div>
+        <div class="calc-item"><label><input type="checkbox" class="calc-check" data-price="700" data-name="ألبوم 30-45"> 📖 ألبوم مقاس 30-45</label> <span>700 ج</span></div>
+
+        <div class="total-price-box">💰 إجمالي الحساب: <span id="totalPriceDisplay">0</span> EGP</div>
+
+        <div style="border-top: 1px dashed #333; margin-top: 15px; padding-top: 10px;">
+            <label>اسم العريس ( English ):</label>
+            <input type="text" id="custGroom" placeholder="Groom's Name" style="direction: ltr; text-align: left;">
+            <label>اسم العروسة ( English ):</label>
+            <input type="text" id="custBride" placeholder="Bride's Name" style="direction: ltr; text-align: left;">
+            <label>رقم واتساب العميل:</label>
+            <input type="tel" id="custWhatsapp" placeholder="رقمك للتواصل">
+            <label>التاريخ المطلوب:</label>
+            <input type="date" id="custDate">
+            <label>مكان السيشن:</label>
+            <input type="text" id="custSession" placeholder="مكان السيشن">
+            <label>مكان القاعة:</label>
+            <input type="text" id="custHall" placeholder="مكان القاعة">
+            
+            <label>مشاركة الصور على الميديا؟</label>
+            <div class="radio-group">
+                <label class="radio-label"><input type="radio" name="custMedia" value="موافق على النشر في Facebook, Instagram, TikTok" checked> موافق على النشر</label>
+                <label class="radio-label"><input type="radio" name="custMedia" value="لا مش حابب أشارك أي صور"> لا مش حابب النشر</label>
+            </div>
+            
+            <label class="checkbox-label">
+                <input type="checkbox" id="custTerms">
+                في حالة إلغاء الحجز لا يتم استرداد مبلغ العربون لكن متاح تأجيل اليوم قبل ميعاد المناسبة فقط.
+            </label>
+            
+            <label>لو في أي ملاحظات ممكن تكتبها هنا:</label>
+            <textarea id="custNotes" rows="2" placeholder="اكتب أي ملاحظات هنا..."></textarea>
+        </div>
+
+        <div class="popup-btns">
+            <button class="btn-confirm" onclick="sendToWhatsapp(true)">تأكيد الباكدج المخصصة 🚀</button>
+            <button class="btn-cancel" onclick="closeCustomCalc()">إلغاء</button>
         </div>
     </div>
 </div>
 
 <script>
     let currentPkg = "";
+    
+    // فتح وغلق النوافذ المنبثقة
     function openBooking(pkg) {
         currentPkg = pkg;
         document.getElementById('selectedPackageText').innerText = "طلب حجز: " + pkg;
         document.getElementById('bookingPopup').style.display = 'flex';
     }
     function closePopup() { document.getElementById('bookingPopup').style.display = 'none'; }
-    
-    function sendToWhatsapp() {
-        const names = document.getElementById('names').value;
-        const clientPhone = document.getElementById('clientWhatsapp').value;
-        const date = document.getElementById('eventDate').value;
-        const session = document.getElementById('sessionLoc').value;
-        const hall = document.getElementById('hallLoc').value;
-        const notes = document.getElementById('notes').value;
+    function openPortfolio() { document.getElementById('portfolioPopup').style.display = 'flex'; }
+    function closePortfolio() { document.getElementById('portfolioPopup').style.display = 'none'; }
+    function openCustomCalc() { document.getElementById('customCalcPopup').style.display = 'flex'; }
+    function closeCustomCalc() { document.getElementById('customCalcPopup').style.display = 'none'; }
+
+    // سيستم حاسبة الأسعار التلقائي للباكدج المخصصة
+    const checkboxes = document.querySelectorAll('.calc-check');
+    checkboxes.forEach(box => {
+        box.addEventListener('change', () => {
+            let total = 0;
+            checkboxes.forEach(item => {
+                if(item.checked) { total += parseInt(item.getAttribute('data-price')); }
+            });
+            document.getElementById('totalPriceDisplay').innerText = total;
+        });
+    });
+
+    // إرسال البيانات للواتساب (العادية والمخصصة الذكية)
+    function sendToWhatsapp(isCustom) {
+        let groom, bride, clientPhone, date, session, hall, notes, mediaOption, termsAgree, text;
         
-        // جلب اختيار النشر على السوشيال ميديا
-        const mediaOption = document.querySelector('input[name="mediaShare"]:checked').value;
-        
-        // التحقق من موافقة العميل على شرط العربون
-        const termsAgree = document.getElementById('termsAgree').checked;
-        
-        if(!names || !date || !clientPhone) { 
-            alert('من فضلك املأ البيانات الأساسية (الأسماء، التاريخ، ورقم الواتساب) لفتح الحجز!'); 
-            return; 
+        if (!isCustom) {
+            groom = document.getElementById('groomName').value;
+            bride = document.getElementById('brideName').value;
+            clientPhone = document.getElementById('clientWhatsapp').value;
+            date = document.getElementById('eventDate').value;
+            session = document.getElementById('sessionLoc').value;
+            hall = document.getElementById('hallLoc').value;
+            notes = document.getElementById('notes').value;
+            mediaOption = document.querySelector('input[name="mediaShare"]:checked').value;
+            termsAgree = document.getElementById('termsAgree').checked;
+            
+            if(!groom || !bride || !date || !clientPhone) { alert('من فضلك املأ الأسماء، التاريخ، ورقم الواتساب!'); return; }
+            if(!termsAgree) { alert('يجب الموافقة على شرط العربون والتأجيل!'); return; }
+            
+            text = `أهلاً علي، حابب أستفسر عن توفر حجز:\n` +
+                   `📌 الطلب: ${currentPkg}\n` +
+                   `🤵 اسم العريس (EN): ${groom}\n` +
+                   `👰 اسم العروسة (EN): ${bride}\n` +
+                   `📱 رقم الواتساب: ${clientPhone}\n` +
+                   `📅 التاريخ: ${date}\n` +
+                   `📸 مكان السيشن: ${session || 'لم يحدد بعد'}\n` +
+                   `🏢 مكان القاعة: ${hall || 'لم يحدد بعد'}\n` +
+                   `🌐 مشاركة الصور: ${mediaOption}\n` +
+                   `⚖️ شروط العربون: تم الاطلاع والموافقة الإلزامية ✅\n` +
+                   `📝 ملاحظات العميل: ${notes || 'لا يوجد ملاحظات إضافية'}`;
+        } else {
+            groom = document.getElementById('custGroom').value;
+            bride = document.getElementById('custBride').value;
+            clientPhone = document.getElementById('custWhatsapp').value;
+            date = document.getElementById('custDate').value;
+            session = document.getElementById('custSession').value;
+            hall = document.getElementById('custHall').value;
+            notes = document.getElementById('custNotes').value;
+            mediaOption = document.querySelector('input[name="custMedia"]:checked').value;
+            termsAgree = document.getElementById('custTerms').checked;
+            
+            let selectedServices = [];
+            checkboxes.forEach(item => {
+                if(item.checked) { selectedServices.push(item.getAttribute('data-name')); }
+            });
+            
+            if(selectedServices.length === 0) { alert('من فضلك اختار خدمة واحدة على الأقل لتصميم باكدجك!'); return; }
+            if(!groom || !bride || !date || !clientPhone) { alert('من فضلك املأ الأسماء، التاريخ، ورقم الواتساب!'); return; }
+            if(!termsAgree) { alert('يجب الموافقة على شرط العربون والتأجيل!'); return; }
+            
+            const totalCost = document.getElementById('totalPriceDisplay').innerText;
+            
+            text = `أهلاً علي، قمت بتصميم باكدج مخصصة عبر موقعك:\n` +
+                   `🛠️ الخدمات المختارة:\n - ${selectedServices.join('\n - ')}\n` +
+                   `💰 السعر الإجمالي التلقائي: ${totalCost} EGP\n` +
+                   `🤵 اسم العريس (EN): ${groom}\n` +
+                   `👰 اسم العروسة (EN): ${bride}\n` +
+                   `📱 رقم الواتساب: ${clientPhone}\n` +
+                   `📅 التاريخ: ${date}\n` +
+                   `📸 مكان السيشن: ${session || 'لم يحدد بعد'}\n` +
+                   `🏢 مكان القاعة: ${hall || 'لم يحدد بعد'}\n` +
+                   `🌐 مشاركة الصور: ${mediaOption}\n` +
+                   `⚖️ شروط العربون: تم الاطلاع والموافقة الإلزامية ✅\n` +
+                   `📝 ملاحظات العميل: ${notes || 'لا يوجد'}`;
         }
         
-        if(!termsAgree) {
-            alert('يجب الموافقة والمبصمة على شرط العربون والتأجيل لتأكيد الحجز!');
-            return;
-        }
-        
-        const text = `أهلاً علي، حابب أستفسر عن توفر حجز:\n` +
-                     `📌 الطلب: ${currentPkg}\n` +
-                     `👤 الأسماء: ${names}\n` +
-                     `📱 رقم الواتساب: ${clientPhone}\n` +
-                     `📅 التاريخ: ${date}\n` +
-                     `📸 مكان السيشن: ${session || 'لم يحدد بعد'}\n` +
-                     `🏢 مكان القاعة: ${hall || 'لم يحدد بعد'}\n` +
-                     `🌐 مشاركة الصور: ${mediaOption}\n` +
-                     `⚖️ شروط العربون: تم الاطلاع والموافقة الإلزامية ✅\n` +
-                     `📝 ملاحظات العميل: ${notes || 'لا يوجد ملاحظات إضافية'}`;
-                     
         window.open(`https://wa.me/201505827390?text=${encodeURIComponent(text)}`, '_blank');
     }
+
+    // 3. كود تشغيل آراء العملاء التلقائي (Slider)
+    let slideIndex = 0;
+    function showSlides() {
+        const slides = document.getElementsByClassName("testimonial-slide");
+        for (let i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1; }
+        slides[slideIndex-1].style.display = "block";
+        setTimeout(showSlides, 4000); // يتغير التقييم تلقائياً كل 4 ثواني
+    }
+    showSlides();
+
+    // 5. كود تشغيل العداد التنازلي التلقائي الحي (3 أيام)
+    let targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 3); // العداد يبدأ تنازلياً دايماً من 3 أيام
+    
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const difference = targetDate - now;
+        
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+        
+        document.getElementById("countdown-timer").innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        if (difference < 0) { document.getElementById("countdown-timer").innerText = "انتهى العرض!"; }
+    }
+    setInterval(updateCountdown, 1000);
 </script>
 
 </body>
