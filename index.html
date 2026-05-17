@@ -13,7 +13,7 @@
         .subtitle { color: #888; font-size: 14px; margin-top: 0; margin-bottom: 25px; }
         .section-title { text-align: right; color: #d4af37; border-right: 3px solid #d4af37; padding-right: 10px; margin: 25px 0 15px 0; font-size: 16px; font-weight: bold; }
         
-        /* الباقات */
+        /* الباقات والخدمات */
         .package { background: #161616; border-radius: 15px; padding: 15px; margin-bottom: 15px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #252525; }
         .package-details { text-align: right; }
         .package-details strong { font-size: 15px; color: #fff; }
@@ -22,10 +22,16 @@
         .price { background: #d4af37; color: #000; padding: 6px 12px; border-radius: 8px; font-weight: bold; font-size: 13px; white-space: nowrap; }
         .btn-select { background: #222; color: #fff; border: 1px solid #d4af37; padding: 5px 10px; border-radius: 6px; font-size: 11px; cursor: pointer; font-family: 'Cairo'; }
         
+        /* الإضافات Extra */
+        .extra-list { background: #161616; border-radius: 15px; padding: 15px; border: 1px solid #252525; margin-bottom: 15px; }
+        .extra-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px dashed #333; }
+        .extra-item:last-child { border-bottom: none; }
+        .extra-name { text-align: right; font-size: 14px; color: #fff; }
+        .extra-price { color: #d4af37; font-weight: bold; font-size: 13px; }
+
         /* الأزرار العامة */
         .btn { display: flex; align-items: center; justify-content: center; text-decoration: none; padding: 12px; border-radius: 12px; font-weight: bold; margin-bottom: 10px; font-size: 15px; transition: 0.3s; cursor: pointer; border: none; width: 100%; font-family: 'Cairo'; }
         .btn-whatsapp { background: #d4af37; color: #000; }
-        .btn-pay { background: #171717; color: #fff; border: 1px solid #fff; }
         .btn-location { background: #9e1a1a; color: #fff; font-size: 13px; padding: 8px; }
         
         /* العنوان */
@@ -36,12 +42,12 @@
         .social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 20px; }
         .social-item { background: #161616; padding: 10px 5px; border-radius: 10px; text-decoration: none; color: #fff; font-size: 12px; border: 1px solid #222; }
         
-        /* الشاشات المنبثقة (Popup) */
+        /* الشاشات المنبثقة Popup */
         .popup { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; z-index: 1000; padding: 10px; box-sizing: border-box; }
         .popup-content { background: #111; border: 1px solid #d4af37; padding: 20px; border-radius: 20px; max-width: 400px; width: 100%; text-align: right; box-sizing: border-box; max-height: 90vh; overflow-y: auto; }
         .popup h3 { color: #d4af37; margin-top: 0; text-align: center; font-size: 18px; }
         .popup label { display: block; margin: 10px 0 5px 0; font-size: 13px; color: #ccc; }
-        .popup input, .popup textarea, .popup select { width: 100%; padding: 10px; background: #222; border: 1px solid #444; border-radius: 8px; color: #fff; font-family: 'Cairo'; box-sizing: border-box; font-size: 13px; }
+        .popup input, .popup textarea { width: 100%; padding: 10px; background: #222; border: 1px solid #444; border-radius: 8px; color: #fff; font-family: 'Cairo'; box-sizing: border-box; font-size: 13px; }
         .popup-btns { display: flex; gap: 10px; margin-top: 15px; }
         .btn-submit { background: #d4af37; color: #000; font-weight: bold; }
         .btn-close { background: #333; color: #fff; }
@@ -61,27 +67,38 @@
     
     <div class="package">
         <div class="package-details">
-            <strong>الباكدج العادية</strong>
-            <p>سيشن + بارتي + ألبوم</p>
+            <strong>باقة كتب كتاب وخطوبة</strong>
+            <p>تغطية كاملة وتصوير احترافي للمناسبة</p>
         </div>
         <div class="price-box">
-            <span class="price">5000 EGP</span>
-            <button class="btn-select" onclick="openBooking('الباكدج العادية (سيشن + بارتي + ألبوم - 5000ج)')">احجز الآن</button>
+            <span class="price">2500 EGP</span>
+            <button class="btn-select" onclick="openBooking('باقة كتب كتاب وخطوبة - 2500ج')">احجز الآن</button>
         </div>
     </div>
 
     <div class="package">
         <div class="package-details">
-            <strong>الباكدج الكاملة</strong>
-            <p>سيشن + بارتي + ريلز + ألبوم</p>
+            <strong>الباكدج العادية</strong>
+            <p>سيشن + بارتي + ألبوم</p>
         </div>
         <div class="price-box">
-            <span class="price">6000 EGP</span>
-            <button class="btn-select" onclick="openBooking('الباكدج الكاملة (سيشن + بارتي + ريلز + ألبوم - 6000ج)')">احجز الآن</button>
+            <span class="price">5000 EGP</span>
+            <button class="btn-select" onclick="openBooking('الباكدج العادية (سيشن + بارتي + ألبوم) - 5000ج')">احجز الآن</button>
         </div>
     </div>
 
-    <div class="section-title">الخدمات الفردية</div>
+    <div class="package">
+        <div class="package-details">
+            <strong>الباكدج الكاملة (Full Day)</strong>
+            <p>سيشن + بارتي + ريلز + تجهيزات + ألبوم</p>
+        </div>
+        <div class="price-box">
+            <span class="price">7000 EGP</span>
+            <button class="btn-select" onclick="openBooking('الباكدج الكاملة Full Day (سيشن + بارتي + ريلز + تجهيزات + ألبوم) - 7000ج')">احجز الآن</button>
+        </div>
+    </div>
+
+    <div class="section-title">الخدمات الفردية والطباعة</div>
 
     <div class="package">
         <div class="package-details">
@@ -96,30 +113,41 @@
 
     <div class="package">
         <div class="package-details">
-            <strong>تغطية بارتي / حفلة</strong>
-            <p>تغطية كاملة للمناسبة والخطوبة</p>
+            <strong>تصوير بارتي</strong>
+            <p>تغطية وتصوير الحفلة أو الخطوبة</p>
         </div>
         <div class="price-box">
             <span class="price">1000 EGP</span>
-            <button class="btn-select" onclick="openBooking('تغطية بارتي - 1000ج')">احجز الآن</button>
+            <button class="btn-select" onclick="openBooking('تصوير بارتي - 1000ج')">احجز الآن</button>
         </div>
     </div>
 
     <div class="package">
         <div class="package-details">
-            <strong>ألبوم أكريليك</strong>
-            <p>ألبوم فخم ديجيتال خامات مستوردة</p>
+            <strong>ألبوم أكريليك + تابلوه</strong>
+            <p>طباعة فخمة بخامات ديجيتال مستوردة</p>
+        </div>
+        <div class="price-box">
+            <span class="price">1500 EGP</span>
+            <button class="btn-select" onclick="openBooking('ألبوم أكريليك + تابلوه - 1500ج')">احجز الآن</button>
+        </div>
+    </div>
+
+    <div class="package">
+        <div class="package-details">
+            <strong>ألبوم عادي (30-45)</strong>
+            <p>طباعة ألبوم مقاس متميز وجودة عالية</p>
         </div>
         <div class="price-box">
             <span class="price">1000 EGP</span>
-            <button class="btn-select" onclick="openBooking('ألبوم أكريليك - 1000ج')">احجز الآن</button>
+            <button class="btn-select" onclick="openBooking('ألبوم عادي 30-45 - 1000ج')">احجز الآن</button>
         </div>
     </div>
 
     <div class="package">
         <div class="package-details">
             <strong>تصوير ريلز (Reels)</strong>
-            <p>فيديو قصير احترافي ومونتاج سريع سينمائي</p>
+            <p>فيديو قصير ومونتاج سينمائي سريع</p>
         </div>
         <div class="price-box">
             <span class="price">1000 EGP</span>
@@ -127,8 +155,25 @@
         </div>
     </div>
 
-    <div class="section-title">الدفع السريع (العربون)</div>
-    <button class="btn btn-pay" onclick="openPayment()">عرض تفاصيل كاش و إنستا باي</button>
+    <div class="section-title">إضافات متميزة (Extra)</div>
+    <div class="extra-list">
+        <div class="extra-item">
+            <span class="extra-name">💾 تسليم الصور على فلاشة (Flash Drive)</span>
+            <span class="extra-price">+ 200 EGP</span>
+        </div>
+        <div class="extra-item">
+            <span class="extra-name">🖼️ تابلوه إضافي كبير للمنزل</span>
+            <span class="extra-price">+ 500 EGP</span>
+        </div>
+        <div class="extra-item">
+            <span class="extra-name">📱 تصوير ومونتاج ريلز (Reels) إضافي</span>
+            <span class="extra-price">+ 1000 EGP</span>
+        </div>
+        <div class="extra-item">
+            <span class="extra-name">🎥 برومو فيديو سينمائي طويل للمناسبة</span>
+            <span class="extra-price">+ 1500 EGP</span>
+        </div>
+    </div>
 
     <div class="section-title">عنوان الاستوديو</div>
     <div class="address-box">
@@ -155,7 +200,7 @@
         <label>اسم العروسة:</label>
         <input type="text" id="brideName" placeholder="اكتب اسم العروسة هنا">
 
-        <label>تاريخ الحجز المناسب لكم:</label>
+        <label>تاريخ اليوم المطلوب:</label>
         <input type="date" id="eventDate">
 
         <label>مكان السيشن:</label>
@@ -164,34 +209,13 @@
         <label>مكان القاعة:</label>
         <input type="text" id="hallLocation" placeholder="اكتب اسم أو مكان القاعة">
 
-        <label>ملاحظات إضافية:</label>
-        <textarea id="notes" rows="2" placeholder="أي تفاصيل تانية حابب تضيفها..."></textarea>
+        <label>ملاحظات أو إضافات حابب تزودها:</label>
+        <textarea id="notes" rows="3" placeholder="اكتب أي إضافات تانية حابب تزودها من قسم الـ Extra هنا..."></textarea>
 
         <div class="popup-btns">
-            <button class="btn btn-submit" onclick="sendToWhatsapp()">تأكيد الحجز عبر واتساب 🚀</button>
-            <button class="btn btn-close" onclick="closePopup('bookingPopup')">إلغاء</button>
+            <button class="btn btn-submit" onclick="sendToWhatsapp()">تأكيد وتفقد الأيام المتاحة 🚀</button>
+            <button class="btn btn-close" onclick="closePopup()">إلغاء</button>
         </div>
-    </div>
-</div>
-
-<div id="paymentPopup" class="popup">
-    <div class="popup-content" style="text-align: center;">
-        <h3>بيانات تحويل العربون 💳</h3>
-        <p style="text-align: right; font-size: 13px; color: #aaa; line-height: 1.6;">
-            يمكنك تحويل قيمة العربون لتأكيد حجز اليوم المتفق عليه من خلال الطرق التالية:
-        </p>
-        
-        <div style="background:#222; padding:12px; border-radius:10px; margin-bottom:10px; text-align:right; border-left:4px solid #d4af37;">
-            <strong style="color:#d4af37;">رقم فودافون كاش:</strong><br>
-            <span style="font-size:16px; letter-spacing:1px;">01505827390</span>
-        </div>
-
-        <div style="background:#222; padding:12px; border-radius:10px; margin-bottom:15px; text-align:right; border-left:4px solid #00c3ff;">
-            <strong style="color:#00c3ff;">حساب إنستا باي (InstaPay):</strong><br>
-            <span style="font-size:14px;">اضغط لتأكيد الحساب مع الإدارة</span>
-        </div>
-
-        <button class="btn btn-close" onclick="closePopup('paymentPopup')">إغلاق الشاشة</button>
     </div>
 </div>
 
@@ -200,16 +224,12 @@
 
     function openBooking(packageName) {
         currentPackage = packageName;
-        document.getElementById('selectedPackageText').innerText = "الباقة المختارة: " + packageName;
+        document.getElementById('selectedPackageText').innerText = "الطلب: " + packageName;
         document.getElementById('bookingPopup').style.display = 'flex';
     }
 
-    function openPayment() {
-        document.getElementById('paymentPopup').style.display = 'flex';
-    }
-
-    function closePopup(id) {
-        document.getElementById(id).style.display = 'none';
+    function closePopup() {
+        document.getElementById('bookingPopup').style.display = 'none';
     }
 
     function sendToWhatsapp() {
@@ -225,20 +245,16 @@
             return;
         }
 
-        // بناء نص الرسالة المنظم
-        const text = `أهلاً Ali Photographer International، حابب أتأكد من الأيام المتوفرة للحجز:\n\n` +
-                     `📌 الباقة: ${currentPackage}\n` +
+        const text = `أهلاً Ali Photographer International، حابب أستفسر عن حجز وتوفر اليوم:\n\n` +
+                     `📌 الطلب الأساسي: ${currentPackage}\n` +
                      `🤵 اسم العريس: ${groom}\n` +
                      `👰 اسم العروسة: ${bride}\n` +
-                     `📅 تاريخ اليوم المطلوب: ${date}\n` +
+                     `📅 التاريخ المطلوب: ${date}\n` +
                      `📸 مكان السيشن: ${session || 'لم يحدد بعد'}\n` +
                      `🏢 مكان القاعة: ${hall || 'لم يحدد بعد'}\n` +
-                     `📝 ملاحظات: ${notes || 'لا يوجد'}`;
+                     `📝 إضافات وتفاصيل: ${notes || 'لا يوجد إضافات حالياً'}`;
 
-        // تحويل النص لروابط أونلاين
         const whatsappUrl = `https://wa.me/201505827390?text=${encodeURIComponent(text)}`;
-        
-        // فتح الواتساب فوراً
         window.open(whatsappUrl, '_blank');
     }
 </script>
