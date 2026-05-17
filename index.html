@@ -47,16 +47,21 @@
         /* الأزرار العامة */
         .btn { display: flex; align-items: center; justify-content: center; text-decoration: none; padding: 12px; border-radius: 12px; font-weight: bold; margin-bottom: 10px; font-size: 15px; transition: 0.3s; cursor: pointer; border: none; width: 100%; font-family: 'Cairo'; }
         .btn-whatsapp { background: #d4af37; color: #000; }
-        .btn-location { background: #9e1a1a; color: #fff; font-size: 13px; padding: 8px; }
+        .btn-location { background: #9e1a1a; color: #fff; font-size: 13px; padding: 10px; text-decoration: none; margin-top: 10px; }
         
         /* العنوان */
         .address-box { background: #111; border: 1px dashed #444; border-radius: 12px; padding: 15px; text-align: right; margin-top: 15px; }
-        .address-box p { margin: 0 0 10px 0; font-size: 13px; color: #ccc; line-height: 1.6; }
+        .address-box p { margin: 0; font-size: 13px; color: #ccc; line-height: 1.6; }
 
         /* السوشيال ميديا */
-        .social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 20px; }
-        .social-item { background: #161616; padding: 10px 5px; border-radius: 10px; text-decoration: none; color: #fff; font-size: 12px; border: 1px solid #222; }
+        .social-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 15px; margin-bottom: 15px; }
+        .social-item { background: #161616; padding: 12px 5px; border-radius: 10px; text-decoration: none; color: #fff; font-size: 13px; border: 1px solid #222; font-weight: bold; transition: 0.3s; }
+        .social-item:hover { border-color: #d4af37; color: #d4af37; }
         
+        /* تنسيق الفوتر وتوقيع POPO */
+        .footer { margin-top: 30px; font-size: 11px; color: #555; border-top: 1px solid #1f1f1f; padding-top: 15px; }
+        .designer-signature { font-size: 9px; color: #3a3a3a; letter-spacing: 2px; text-transform: uppercase; margin-top: 5px; display: block; }
+
         /* الشاشات المنبثقة Popup */
         .popup { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); justify-content: center; align-items: center; z-index: 1000; padding: 10px; box-sizing: border-box; }
         .popup-content { background: #111; border: 1px solid #d4af37; padding: 20px; border-radius: 20px; max-width: 400px; width: 100%; text-align: right; box-sizing: border-box; max-height: 90vh; overflow-y: auto; }
@@ -153,3 +158,64 @@
     </div>
 
     <div class="package">
+        <div class="package-details">
+            <strong>تصوير ريلز (Reels)</strong>
+            <p>فيديو قصير ومونتاج سينمائي سريع</p>
+        </div>
+        <div class="price-box">
+            <span class="price">1000 EGP</span>
+            <button class="btn-select" onclick="openBooking('تصوير ريلز فردي - 1000ج')">احجز الآن</button>
+        </div>
+    </div>
+
+    <div class="section-title">الطباعة</div>
+
+    <div class="package">
+        <div class="package-details">
+            <strong>ألبوم أكريليك + تابلوه</strong>
+            <p>طباعة فخمة بخامات ديجيتال مستوردة</p>
+        </div>
+        <div class="price-box">
+            <span class="price">1000 EGP</span>
+            <button class="btn-select" onclick="openBooking('طباعة ألبوم أكريليك + تابلوه - 1000ج')">احجز الآن</button>
+        </div>
+    </div>
+
+    <div class="package">
+        <div class="package-details">
+            <strong>ألبوم مقاس 30-45</strong>
+            <p>طباعة ألبوم متميز بجودة عالية ألوان سينمائية</p>
+        </div>
+        <div class="price-box">
+            <span class="price">700 EGP</span>
+            <button class="btn-select" onclick="openBooking('طباعة ألبوم مقاس 30-45 - 700ج')">احجز الآن</button>
+        </div>
+    </div>
+
+    <div class="section-title">إضافات (Extra)</div>
+    <div class="extra-list">
+        <div class="extra-item">
+            <span class="extra-name">💾 تسليم الصور على فلاشة</span>
+            <span class="extra-price">EGP</span>
+        </div>
+        <div class="extra-item">
+            <span class="extra-name">🖼️ تابلوه علي حسب الحجم</span>
+            <span class="extra-price">EGP</span>
+        </div>
+        <div class="extra-item">
+            <span class="extra-name">📱 تصوير ومونتاج ريلز (Reels) إضافي</span>
+            <span class="extra-price">+ 1000 EGP</span>
+        </div>
+        <div class="extra-item" style="border-top: 1px solid #333; margin-top: 5px; padding-top: 10px;">
+            <span class="extra-name">🎥 برومو (تصوير سيشن وقاعة)</span>
+            <span class="extra-price">EGP</span>
+        </div>
+        <div class="extra-item">
+            <span class="extra-name">🎥 برومو (تصوير سيشن فقط)</span>
+            <span class="extra-price">EGP</span>
+        </div>
+        <div class="extra-item">
+            <span class="extra-name">🎥 برومو (تصوير قاعة فقط)</span>
+            <span class="extra-price">EGP</span>
+        </div>
+    </div>
