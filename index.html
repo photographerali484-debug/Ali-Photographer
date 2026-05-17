@@ -10,7 +10,22 @@
         .container { max-width: 450px; margin: auto; border: 1px solid #222; padding: 20px; border-radius: 20px; background: #0f0f0f; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
         .logo img { width: 130px; height: auto; margin-bottom: 10px; border-radius: 10px; }
         h1 { color: #d4af37; font-size: 22px; margin: 5px 0; text-transform: uppercase; letter-spacing: 1px; }
-        .subtitle { color: #888; font-size: 14px; margin-top: 0; margin-bottom: 25px; }
+        .subtitle { color: #888; font-size: 14px; margin-top: 0; margin-bottom: 15px; }
+        
+        /* تصميم الرسالة الترحيبية الشيك */
+        .welcome-message { 
+            background: linear-gradient(135deg, #161616 0%, #1c1c1c 100%);
+            border: 1px solid #d4af37;
+            padding: 15px 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #f0e6d2;
+            font-style: italic;
+            box-shadow: inset 0 0 10px rgba(212, 175, 55, 0.1);
+        }
+        
         .section-title { text-align: right; color: #d4af37; border-right: 3px solid #d4af37; padding-right: 10px; margin: 25px 0 15px 0; font-size: 16px; font-weight: bold; }
         
         /* الباقات والخدمات */
@@ -26,8 +41,8 @@
         .extra-list { background: #161616; border-radius: 15px; padding: 15px; border: 1px solid #252525; margin-bottom: 15px; }
         .extra-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px dashed #333; }
         .extra-item:last-child { border-bottom: none; }
-        .extra-name { text-align: right; font-size: 14px; color: #fff; }
-        .extra-price { color: #d4af37; font-weight: bold; font-size: 13px; }
+        .extra-name { text-align: right; font-size: 14px; color: #fff; padding-left: 10px; }
+        .extra-price { color: #d4af37; font-weight: bold; font-size: 13px; white-space: nowrap; }
 
         /* الأزرار العامة */
         .btn { display: flex; align-items: center; justify-content: center; text-decoration: none; padding: 12px; border-radius: 12px; font-weight: bold; margin-bottom: 10px; font-size: 15px; transition: 0.3s; cursor: pointer; border: none; width: 100%; font-family: 'Cairo'; }
@@ -63,16 +78,20 @@
     <h1>Ali Photographer International</h1>
     <div class="subtitle">Professional Photographer</div>
 
+    <div class="welcome-message">
+        ✨ "يومكم المميز هو أمانة في قلبي قبل عدستي.. شكراً لثقتكم التي تجعل من عملي فناً" 🤍
+    </div>
+
     <div class="section-title">العروض والباكدجات</div>
     
     <div class="package">
         <div class="package-details">
-            <strong>باقة كتب كتاب وخطوبة</strong>
-            <p>تغطية كاملة وتصوير احترافي للمناسبة</p>
+            <strong>باكدج كاملة (Full Day)</strong>
+            <p>سيشن + بارتي + ريلز + تجهيزات + ألبوم</p>
         </div>
         <div class="price-box">
-            <span class="price">2500 EGP</span>
-            <button class="btn-select" onclick="openBooking('باقة كتب كتاب وخطوبة - 2500ج')">احجز الآن</button>
+            <span class="price">7000 EGP</span>
+            <button class="btn-select" onclick="openBooking('باكدج كاملة Full Day (سيشن + بارتي + ريلز + تجهيزات + ألبوم) - 7000ج')">احجز الآن</button>
         </div>
     </div>
 
@@ -89,21 +108,21 @@
 
     <div class="package">
         <div class="package-details">
-            <strong>الباكدج الكاملة (Full Day)</strong>
-            <p>سيشن + بارتي + ريلز + تجهيزات + ألبوم</p>
+            <strong>خطوبة أو كتب كتاب</strong>
+            <p>تغطية كاملة وتصوير احترافي للمناسبة</p>
         </div>
         <div class="price-box">
-            <span class="price">7000 EGP</span>
-            <button class="btn-select" onclick="openBooking('الباكدج الكاملة Full Day (سيشن + بارتي + ريلز + تجهيزات + ألبوم) - 7000ج')">احجز الآن</button>
+            <span class="price">2500 EGP</span>
+            <button class="btn-select" onclick="openBooking('باقة خطوبة أو كتب كتاب - 2500ج')">احجز الآن</button>
         </div>
     </div>
 
-    <div class="section-title">الخدمات الفردية والطباعة</div>
+    <div class="section-title">سيشن فردي</div>
 
     <div class="package">
         <div class="package-details">
-            <strong>سيشن تصوير خارجي</strong>
-            <p>جلسة تصوير احترافية مخصصة</p>
+            <strong>تصوير سيشن</strong>
+            <p>جلسة تصوير خارجي احترافية مخصصة</p>
         </div>
         <div class="price-box">
             <span class="price">3000 EGP</span>
@@ -114,150 +133,23 @@
     <div class="package">
         <div class="package-details">
             <strong>تصوير بارتي</strong>
-            <p>تغطية وتصوير الحفلة أو الخطوبة</p>
+            <p>تغطية وتصوير الحفلة أو المناسبة</p>
         </div>
         <div class="price-box">
             <span class="price">1000 EGP</span>
-            <button class="btn-select" onclick="openBooking('تصوير بارتي - 1000ج')">احجز الآن</button>
+            <button class="btn-select" onclick="openBooking('تصوير بارتي فردي - 1000ج')">احجز الآن</button>
         </div>
     </div>
 
     <div class="package">
         <div class="package-details">
-            <strong>ألبوم أكريليك + تابلوه</strong>
-            <p>طباعة فخمة بخامات ديجيتال مستوردة</p>
+            <strong>تجهيزات</strong>
+            <p>تصوير كواليس وتجهيزات العروسين</p>
         </div>
         <div class="price-box">
-            <span class="price">1500 EGP</span>
-            <button class="btn-select" onclick="openBooking('ألبوم أكريليك + تابلوه - 1500ج')">احجز الآن</button>
+            <span class="price">1000 EGP</span>
+            <button class="btn-select" onclick="openBooking('تصوير تجهيزات فردي - 1000ج')">احجز الآن</button>
         </div>
     </div>
 
     <div class="package">
-        <div class="package-details">
-            <strong>ألبوم عادي (30-45)</strong>
-            <p>طباعة ألبوم مقاس متميز وجودة عالية</p>
-        </div>
-        <div class="price-box">
-            <span class="price">1000 EGP</span>
-            <button class="btn-select" onclick="openBooking('ألبوم عادي 30-45 - 1000ج')">احجز الآن</button>
-        </div>
-    </div>
-
-    <div class="package">
-        <div class="package-details">
-            <strong>تصوير ريلز (Reels)</strong>
-            <p>فيديو قصير ومونتاج سينمائي سريع</p>
-        </div>
-        <div class="price-box">
-            <span class="price">1000 EGP</span>
-            <button class="btn-select" onclick="openBooking('تصوير ريلز - 1000ج')">احجز الآن</button>
-        </div>
-    </div>
-
-    <div class="section-title">إضافات متميزة (Extra)</div>
-    <div class="extra-list">
-        <div class="extra-item">
-            <span class="extra-name">💾 تسليم الصور على فلاشة (Flash Drive)</span>
-            <span class="extra-price">+ 200 EGP</span>
-        </div>
-        <div class="extra-item">
-            <span class="extra-name">🖼️ تابلوه إضافي كبير للمنزل</span>
-            <span class="extra-price">+ 500 EGP</span>
-        </div>
-        <div class="extra-item">
-            <span class="extra-name">📱 تصوير ومونتاج ريلز (Reels) إضافي</span>
-            <span class="extra-price">+ 1000 EGP</span>
-        </div>
-        <div class="extra-item">
-            <span class="extra-name">🎥 برومو فيديو سينمائي طويل للمناسبة</span>
-            <span class="extra-price">+ 1500 EGP</span>
-        </div>
-    </div>
-
-    <div class="section-title">عنوان الاستوديو</div>
-    <div class="address-box">
-        <p>📍 <strong>دايموند استوديو:</strong><br>نزله دائري الوراق - أمام اسماعيلكوا - مبنى سرايا الديب</p>
-        <a href="https://maps.app.goo.gl/kJt37ZdcLwkki2ve9" target="_blank" class="btn btn-location">🗺️ افتح موقعنا على الخريطة</a>
-    </div>
-
-    <div class="section-title">تابعنا على</div>
-    <div class="social-grid">
-        <a href="https://www.facebook.com/profile.php?id=100044231569504" target="_blank" class="social-item">فيسبوك</a>
-        <a href="https://www.instagram.com/ali_photographer_international" target="_blank" class="social-item">إنستجرام</a>
-        <a href="https://www.tiktok.com/@ali_photographer1" target="_blank" class="social-item">تيك توك</a>
-    </div>
-</div>
-
-<div id="bookingPopup" class="popup">
-    <div class="popup-content">
-        <h3>تفاصيل الحجز واليوم 📝</h3>
-        <p id="selectedPackageText" style="color:#d4af37; font-size:13px; text-align:center; margin-bottom:15px;"></p>
-        
-        <label>اسم العريس:</label>
-        <input type="text" id="groomName" placeholder="اكتب اسم العريس هنا">
-
-        <label>اسم العروسة:</label>
-        <input type="text" id="brideName" placeholder="اكتب اسم العروسة هنا">
-
-        <label>تاريخ اليوم المطلوب:</label>
-        <input type="date" id="eventDate">
-
-        <label>مكان السيشن:</label>
-        <input type="text" id="sessionLocation" placeholder="مثال: فوتوسيشن خارجي / لوكيشن معين">
-
-        <label>مكان القاعة:</label>
-        <input type="text" id="hallLocation" placeholder="اكتب اسم أو مكان القاعة">
-
-        <label>ملاحظات أو إضافات حابب تزودها:</label>
-        <textarea id="notes" rows="3" placeholder="اكتب أي إضافات تانية حابب تزودها من قسم الـ Extra هنا..."></textarea>
-
-        <div class="popup-btns">
-            <button class="btn btn-submit" onclick="sendToWhatsapp()">تأكيد وتفقد الأيام المتاحة 🚀</button>
-            <button class="btn btn-close" onclick="closePopup()">إلغاء</button>
-        </div>
-    </div>
-</div>
-
-<script>
-    let currentPackage = "";
-
-    function openBooking(packageName) {
-        currentPackage = packageName;
-        document.getElementById('selectedPackageText').innerText = "الطلب: " + packageName;
-        document.getElementById('bookingPopup').style.display = 'flex';
-    }
-
-    function closePopup() {
-        document.getElementById('bookingPopup').style.display = 'none';
-    }
-
-    function sendToWhatsapp() {
-        const groom = document.getElementById('groomName').value;
-        const bride = document.getElementById('brideName').value;
-        const date = document.getElementById('eventDate').value;
-        const session = document.getElementById('sessionLocation').value;
-        const hall = document.getElementById('hallLocation').value;
-        const notes = document.getElementById('notes').value;
-
-        if(!groom || !bride || !date) {
-            alert('من فضلك املأ البيانات الأساسية (الأسماء والتاريخ) لتفقد الأيام المتاحة!');
-            return;
-        }
-
-        const text = `أهلاً Ali Photographer International، حابب أستفسر عن حجز وتوفر اليوم:\n\n` +
-                     `📌 الطلب الأساسي: ${currentPackage}\n` +
-                     `🤵 اسم العريس: ${groom}\n` +
-                     `👰 اسم العروسة: ${bride}\n` +
-                     `📅 التاريخ المطلوب: ${date}\n` +
-                     `📸 مكان السيشن: ${session || 'لم يحدد بعد'}\n` +
-                     `🏢 مكان القاعة: ${hall || 'لم يحدد بعد'}\n` +
-                     `📝 إضافات وتفاصيل: ${notes || 'لا يوجد إضافات حالياً'}`;
-
-        const whatsappUrl = `https://wa.me/201505827390?text=${encodeURIComponent(text)}`;
-        window.open(whatsappUrl, '_blank');
-    }
-</script>
-
-</body>
-</html>
