@@ -94,14 +94,14 @@
         .btn-location { background: #9e1a1a; color: #fff; text-decoration: none; display: block; padding: 12px; border-radius: 15px; font-size: 14px; font-weight: bold; margin-top: 15px; border: none; transition: 0.3s; }
         .btn-location:hover { background: #be2222; transform: translateY(-2px); }
 
-        /* شبكة السوشيال ميديا والتواصل كاملة بالواتساب الجديد */
+        /* شبكة تواصل الميديا بالواتساب */
         .social-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 20px; margin-bottom: 10px; }
         .social-item { background: rgba(255, 255, 255, 0.05); padding: 12px 5px; border-radius: 12px; text-decoration: none; color: #fff; font-size: 13px; border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.3s; font-weight: bold; display: flex; align-items: center; justify-content: center; }
         .social-item:hover { border-color: #d4af37; color: #d4af37; transform: translateY(-3px); }
         .social-item.whatsapp-link { background: rgba(37, 211, 102, 0.1); border-color: rgba(37, 211, 102, 0.3); }
         .social-item.whatsapp-link:hover { border-color: #25d366; color: #25d366; }
         
-        /* الفوتر وتوقيع المصمم المطلبوب POPO */
+        /* الفوتر وتوقيع المصمم POPO */
         .footer { margin-top: 40px; font-size: 11px; color: #555; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px; }
         .designer-signature { font-size: 9px; color: #444; letter-spacing: 2px; text-transform: uppercase; margin-top: 8px; display: block; }
 
@@ -111,6 +111,15 @@
         .popup h3 { margin-top: 0; color: #d4af37; text-align: center; font-size: 18px; }
         .popup label { display: block; margin: 12px 0 5px; font-size: 13px; color: #d4af37; }
         .popup input, .popup textarea { width: 100%; padding: 12px; background: #1a1a1a; border: 1px solid #333; border-radius: 10px; color: #fff; font-family: 'Cairo'; box-sizing: border-box; font-size: 13px; }
+        
+        /* تنسيق خيارات الراديو ومربع الصح الجديد */
+        .radio-group { background: rgba(255,255,255,0.02); padding: 10px; border-radius: 10px; border: 1px solid #222; margin-top: 5px; }
+        .radio-label { display: flex !important; align-items: center; gap: 8px; color: #ccc !important; font-size: 12px !important; cursor: pointer; margin: 8px 0 !important; }
+        .radio-label input { width: auto !important; margin: 0; cursor: pointer; }
+        
+        .checkbox-label { display: flex !important; align-items: flex-start; gap: 8px; color: #ffbcbc !important; font-size: 11px !important; cursor: pointer; margin: 15px 0 5px 0 !important; line-height: 1.4; background: rgba(255, 0, 0, 0.05); padding: 10px; border-radius: 10px; border: 1px dashed rgba(255, 0, 0, 0.2); }
+        .checkbox-label input { width: auto !important; margin-top: 3px; cursor: pointer; }
+
         .popup-btns { display: flex; gap: 10px; margin-top: 20px; }
         .btn-confirm { background: #d4af37; color: #000; border: none; padding: 12px; border-radius: 12px; font-weight: bold; flex: 2; cursor: pointer; font-family: 'Cairo'; font-size: 14px; }
         .btn-cancel { background: #222; color: #fff; border: none; padding: 12px; border-radius: 12px; flex: 1; cursor: pointer; font-family: 'Cairo'; font-size: 14px; }
@@ -195,9 +204,10 @@
 
     <div class="section-title">إضافات (Extra)</div>
     <div class="extra-list">
+        <div class="extra-item"><span class="extra-name">📸 كاميرا إضافية</span><span class="extra-price">+ 1000 EGP</span></div>
         <div class="extra-item"><span class="extra-name">💾 تسليم الصور على فلاشة</span><span class="extra-price">EGP</span></div>
         <div class="extra-item"><span class="extra-name">🖼️ تابلوه علي حسب الحجم</span><span class="extra-price">EGP</span></div>
-        <div class="extra-item"><span class="extra-name">📱 ريلز (Reels) إضافي</span><span class="extra-price">+ 1000 EGP</span></div>
+        <div class="extra-item"><span class="extra-name">📱 ريلز (Reels) إفاضي</span><span class="extra-price">+ 1000 EGP</span></div>
         <div class="extra-item" style="border-top: 1px solid rgba(255,255,255,0.05); margin-top: 5px; padding-top: 10px;"><span class="extra-name">🎥 برومو (تصوير سيشن وقاعة)</span><span class="extra-price">EGP</span></div>
         <div class="extra-item"><span class="extra-name">🎥 برومو (تصوير سيشن فقط)</span><span class="extra-price">EGP</span></div>
         <div class="extra-item"><span class="extra-name">🎥 برومو (تصوير قاعة فقط)</span><span class="extra-price">EGP</span></div>
@@ -206,7 +216,7 @@
     <div class="section-title">عنوان الاستوديو</div>
     <div class="address-box">
         <p>📍 <strong>دايموند استوديو:</strong><br>نزله دائري الوراق - أمام اسماعيلكوا - مبنى سرايا الديب</p>
-        <a href="https://maps.google.com/?q=نزله+دائري+الوراق+مبنى+سرايا+الديب" target="_blank" class="btn-location">🗺️ افتح موقعنا على الخريطة</a>
+        <a href="https://maps.google.com/?q=نزله+دائري+الوراق" target="_blank" class="btn-location">🗺️ افتح موقعنا على الخريطة</a>
     </div>
 
     <div class="section-title">تابعنا على</div>
@@ -243,8 +253,25 @@
         <label>مكان القاعة:</label>
         <input type="text" id="hallLoc" placeholder="اسم ومكان قاعة الفرح">
 
-        <label>ملاحظات:</label>
-        <textarea id="notes" rows="2" placeholder="أي إضافات تانية من قسم الـ Extra..."></textarea>
+        <label>هل توافق على مشاركة تفاصيل اليوم والصور على مواقع التواصل؟</label>
+        <div class="radio-group">
+            <label class="radio-label">
+                <input type="radio" name="mediaShare" value="موافق على النشر في Facebook, Instagram, TikTok" checked>
+                موافق على النشر في Facebook, Instagram, TikTok
+            </label>
+            <label class="radio-label">
+                <input type="radio" name="mediaShare" value="لا مش حابب أشارك أي صور على مواقع التواصل">
+                لا مش حابب أشارك أي صور على مواقع التواصل
+            </label>
+        </div>
+
+        <label class="checkbox-label">
+            <input type="checkbox" id="termsAgree">
+            في حالة إلغاء الحجز لا يتم استرداد مبلغ العربون لكن متاح تأجيل اليوم قبل ميعاد المناسبة فقط.
+        </label>
+
+        <label>لو في أي ملاحظات ممكن تكتبها هنا:</label>
+        <textarea id="notes" rows="2" placeholder="اكتب ملاحظاتك أو أي إضافات تانية هنا..."></textarea>
         
         <div class="popup-btns">
             <button class="btn-confirm" onclick="sendToWhatsapp()">تأكيد عبر واتساب 🚀</button>
@@ -270,9 +297,20 @@
         const hall = document.getElementById('hallLoc').value;
         const notes = document.getElementById('notes').value;
         
+        // جلب اختيار النشر على السوشيال ميديا
+        const mediaOption = document.querySelector('input[name="mediaShare"]:checked').value;
+        
+        // التحقق من موافقة العميل على شرط العربون
+        const termsAgree = document.getElementById('termsAgree').checked;
+        
         if(!names || !date || !clientPhone) { 
             alert('من فضلك املأ البيانات الأساسية (الأسماء، التاريخ، ورقم الواتساب) لفتح الحجز!'); 
             return; 
+        }
+        
+        if(!termsAgree) {
+            alert('يجب الموافقة والمبصمة على شرط العربون والتأجيل لتأكيد الحجز!');
+            return;
         }
         
         const text = `أهلاً علي، حابب أستفسر عن توفر حجز:\n` +
@@ -282,7 +320,9 @@
                      `📅 التاريخ: ${date}\n` +
                      `📸 مكان السيشن: ${session || 'لم يحدد بعد'}\n` +
                      `🏢 مكان القاعة: ${hall || 'لم يحدد بعد'}\n` +
-                     `📝 ملاحظات وإضافات: ${notes || 'لا يوجد'}`;
+                     `🌐 مشاركة الصور: ${mediaOption}\n` +
+                     `⚖️ شروط العربون: تم الاطلاع والموافقة الإلزامية ✅\n` +
+                     `📝 ملاحظات العميل: ${notes || 'لا يوجد ملاحظات إضافية'}`;
                      
         window.open(`https://wa.me/201505827390?text=${encodeURIComponent(text)}`, '_blank');
     }
