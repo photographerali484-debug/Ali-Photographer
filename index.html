@@ -6,11 +6,11 @@
     <title>Ali Photographer International</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* ثيم الخلفية الفخم مع صورتك الشفافة */
+        /* ثيم Background الفخم مع صورتك */
         body { 
-            /* تم ضبط الامتداد إلى my-bg.jpg.jpg ليطابق الصورة التي قمت برفعها بدقة */
+            /* تم تعديل الاسم هنا ليطابق ملفك تماماً */
             background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
-                        url('my-bg.jpg.jpg'); 
+                        url('my-bg.jpg'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -29,19 +29,17 @@
             border: 1px solid rgba(212, 175, 55, 0.2); 
             padding: 25px; 
             border-radius: 30px; 
-            background: rgba(15, 15, 15, 0.85); /* تعتيم الكروت لحماية وضوح النصوص والقراءة */
+            background: rgba(15, 15, 15, 0.85); 
             backdrop-filter: blur(10px); 
             box-shadow: 0 10px 30px rgba(0,0,0,0.8); 
             animation: fadeInPage 1s ease-in-out;
         }
 
-        /* أنيميشن فخم لظهور الصفحة */
         @keyframes fadeInPage {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* تنسيق صورة البروفايل الفخمة */
         .profile-area { position: relative; margin-bottom: 15px; margin-top: 10px; }
         .profile-pic {
             width: 120px;
@@ -57,7 +55,6 @@
         h1 { color: #d4af37; font-size: 22px; margin: 15px 0 5px; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
         .subtitle { color: #aaa; font-size: 14px; margin-bottom: 15px; }
         
-        /* زر البورتفوليو الفخم الجديد */
         .btn-portfolio {
             background: transparent;
             color: #d4af37;
@@ -80,7 +77,6 @@
             box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
         }
 
-        /* الرسالة الترحيبية الشيك */
         .welcome-message { 
             background: rgba(212, 175, 55, 0.05);
             border: 1px solid rgba(212, 175, 55, 0.3);
@@ -94,7 +90,6 @@
         
         .section-title { text-align: right; color: #d4af37; border-right: 3px solid #d4af37; padding-right: 10px; margin: 30px 0 15px 0; font-size: 16px; font-weight: bold; }
         
-        /* شكل الباكدجات وأنيميشن الانزلاق الناعم عند التحميل */
         .package { 
             background: rgba(255, 255, 255, 0.03); 
             border-radius: 20px; 
@@ -121,7 +116,6 @@
         .price-box { display: flex; flex-direction: column; align-items: center; gap: 8px; }
         .price { background: #d4af37; color: #000; padding: 6px 12px; border-radius: 10px; font-weight: bold; font-size: 13px; white-space: nowrap; }
         
-        /* تأثير الإضاءة النبضي (Glow) حول زر احجز الآن */
         .btn-select { 
             background: transparent; 
             color: #d4af37; 
@@ -142,50 +136,42 @@
             100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
         }
         
-        /* قائمة الإضافات (Extra) */
         .extra-list { background: rgba(255, 255, 255, 0.02); border-radius: 20px; padding: 15px; border: 1px solid rgba(255, 255, 255, 0.05); }
         .extra-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
         .extra-item:last-child { border-bottom: none; }
         .extra-name { text-align: right; font-size: 14px; color: #ccc; }
         .extra-price { color: #d4af37; font-weight: bold; font-size: 13px; }
 
-        /* تصميم قسم موقع الاستوديو والعنوان واللوكيشن */
         .address-box { background: rgba(255, 255, 255, 0.02); border-radius: 20px; padding: 18px; text-align: right; border: 1px dashed rgba(255, 255, 255, 0.1); margin-bottom: 20px; }
         .address-box p { margin: 0; font-size: 13px; color: #bbb; line-height: 1.6; }
         .btn-location { background: #9e1a1a; color: #fff; text-decoration: none; display: block; padding: 12px; border-radius: 15px; font-size: 14px; font-weight: bold; margin-top: 15px; border: none; transition: 0.3s; }
         .btn-location:hover { background: #be2222; transform: translateY(-2px); }
 
-        /* شبكة تواصل الميديا بالواتساب */
         .social-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 20px; margin-bottom: 10px; }
         .social-item { background: rgba(255, 255, 255, 0.05); padding: 12px 5px; border-radius: 12px; text-decoration: none; color: #fff; font-size: 13px; border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.3s; font-weight: bold; display: flex; align-items: center; justify-content: center; }
         .social-item:hover { border-color: #d4af37; color: #d4af37; transform: translateY(-3px); }
         .social-item.whatsapp-link { background: rgba(37, 211, 102, 0.1); border-color: rgba(37, 211, 102, 0.3); }
         .social-item.whatsapp-link:hover { border-color: #25d366; color: #25d366; }
         
-        /* سلايدر آراء العملاء التلقائي الأنيق */
         .testimonials-container { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 20px; padding: 20px; overflow: hidden; position: relative; margin-top: 20px; height: 95px; }
         .testimonial-slide { display: none; text-align: center; animation: fadeTesti 0.8s ease-in-out; }
         .testimonial-slide p { font-size: 13px; color: #e0e0e0; font-style: italic; margin: 0 0 10px 0; }
         .testimonial-slide span { font-size: 11px; color: #d4af37; font-weight: bold; }
         @keyframes fadeTesti { from { opacity: 0; } to { opacity: 1; } }
 
-        /* الفوتر وتوقيع المصمم POPO */
         .footer { margin-top: 40px; font-size: 11px; color: #555; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px; }
         .designer-signature { font-size: 9px; color: #444; letter-spacing: 2px; text-transform: uppercase; margin-top: 8px; display: block; }
 
-        /* شاشات الحجز والـ Popup المعدلة */
         .popup { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); justify-content: center; align-items: center; z-index: 1000; padding: 15px; box-sizing: border-box; }
         .popup-content { background: #111; border: 1px solid #d4af37; padding: 25px; border-radius: 25px; max-width: 400px; width: 100%; text-align: right; max-height: 90vh; overflow-y: auto; box-sizing: border-box; }
         .popup h3 { margin-top: 0; color: #d4af37; text-align: center; font-size: 18px; }
         .popup label { display: block; margin: 12px 0 5px; font-size: 13px; color: #d4af37; }
         .popup input, .popup textarea { width: 100%; padding: 12px; background: #1a1a1a; border: 1px solid #333; border-radius: 10px; color: #fff; font-family: 'Cairo'; box-sizing: border-box; font-size: 13px; }
         
-        /* تنسيق خيارات الراديو والمجموعات الذكية */
         .radio-group { background: rgba(255,255,255,0.02); padding: 10px; border-radius: 10px; border: 1px solid #222; margin-top: 5px; }
         .radio-label { display: flex !important; align-items: center; gap: 8px; color: #ccc !important; font-size: 12px !important; cursor: pointer; margin: 8px 0 !important; }
         .radio-label input { width: auto !important; margin: 0; cursor: pointer; }
         
-        /* شكل قائمة الاختيارات في الباكدج المخصصة */
         .calc-item { display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.03); padding: 10px; border-radius: 10px; margin-bottom: 8px; font-size: 13px; }
         .calc-item input { width: auto !important; cursor: pointer; }
         .total-price-box { background: #d4af37; color: #000; padding: 12px; border-radius: 12px; text-align: center; font-weight: bold; margin-top: 15px; font-size: 15px; }
@@ -197,7 +183,6 @@
         .btn-confirm { background: #d4af37; color: #000; border: none; padding: 12px; border-radius: 12px; font-weight: bold; flex: 2; cursor: pointer; font-family: 'Cairo'; font-size: 14px; }
         .btn-cancel { background: #222; color: #fff; border: none; padding: 12px; border-radius: 12px; flex: 1; cursor: pointer; font-family: 'Cairo'; font-size: 14px; }
 
-        /* ستايل معرض الصور المصغر البوب آب */
         .portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 15px; }
         .portfolio-grid img { width: 100%; height: 130px; object-fit: cover; border-radius: 12px; border: 1px solid rgba(212,175,55,0.3); }
     </style>
@@ -338,7 +323,7 @@
     <div class="section-title">عنوان الاستوديو</div>
     <div class="address-box">
         <p>📍 <strong>دايموند استوديو:</strong><br>نزله دائري الوراق - أمام اسماعيلكوا - مبنى سرايا الديب</p>
-        <a href="https://maps.google.com" target="_blank" class="btn-location">🗺️ افتح موقعنا على الخريطة</a>
+        <a href="http://maps.google.com" target="_blank" class="btn-location">🗺️ افتح موقعنا على الخريطة</a>
     </div>
 
     <div class="section-title">قالوا عن عدستنا 💬</div>
@@ -483,7 +468,6 @@
 <script>
     let currentPkg = "";
     
-    // فتح وغلق النوافذ المنبثقة
     function openBooking(pkg) {
         currentPkg = pkg;
         document.getElementById('selectedPackageText').innerText = "طلب حجز: " + pkg;
@@ -495,7 +479,6 @@
     function openCustomCalc() { document.getElementById('customCalcPopup').style.display = 'flex'; }
     function closeCustomCalc() { document.getElementById('customCalcPopup').style.display = 'none'; }
 
-    // سيستم حاسبة الأسعار التلقائي للباكدج المخصصة
     const checkboxes = document.querySelectorAll('.calc-check');
     checkboxes.forEach(box => {
         box.addEventListener('change', () => {
@@ -507,7 +490,6 @@
         });
     });
 
-    // إرسال البيانات للواتساب (العادية والمخصصة الذكية)
     function sendToWhatsapp(isCustom) {
         let groom, bride, clientPhone, date, session, hall, notes, mediaOption, termsAgree, text;
         
@@ -575,7 +557,6 @@
         window.open(`https://wa.me/201505827390?text=${encodeURIComponent(text)}`, '_blank');
     }
 
-    // كود تشغيل آراء العملاء التلقائي (Slider)
     let slideIndex = 0;
     function showSlides() {
         const slides = document.getElementsByClassName("testimonial-slide");
@@ -583,7 +564,7 @@
         slideIndex++;
         if (slideIndex > slides.length) { slideIndex = 1; }
         if(slides.length > 0) { slides[slideIndex-1].style.display = "block"; }
-        setTimeout(showSlides, 4000); // يتغير التقييم تلقائياً كل 4 ثواني
+        setTimeout(showSlides, 4000); 
     }
     showSlides();
 </script>
