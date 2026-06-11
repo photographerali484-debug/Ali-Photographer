@@ -6,10 +6,15 @@
     <title>Ali Photographer International</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* ثيم الخلفية الفخم وأنيميشن الظهور */
+        /* ثيم الخلفية الفخم مع صورتك الشفافة */
         body { 
-            background: radial-gradient(circle at top right, #1a1a1a, #000000);
+            /* تم ضبط الامتداد إلى my-bg.jpg.jpg ليطابق الصورة التي قمت برفعها بدقة */
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+                        url('my-bg.jpg.jpg'); 
+            background-size: cover;
+            background-position: center;
             background-attachment: fixed;
+            background-repeat: no-repeat;
             color: #ffffff; 
             font-family: 'Cairo', sans-serif; 
             text-align: center; 
@@ -24,7 +29,7 @@
             border: 1px solid rgba(212, 175, 55, 0.2); 
             padding: 25px; 
             border-radius: 30px; 
-            background: rgba(15, 15, 15, 0.8); 
+            background: rgba(15, 15, 15, 0.85); /* تعتيم الكروت لحماية وضوح النصوص والقراءة */
             backdrop-filter: blur(10px); 
             box-shadow: 0 10px 30px rgba(0,0,0,0.8); 
             animation: fadeInPage 1s ease-in-out;
@@ -333,7 +338,7 @@
     <div class="section-title">عنوان الاستوديو</div>
     <div class="address-box">
         <p>📍 <strong>دايموند استوديو:</strong><br>نزله دائري الوراق - أمام اسماعيلكوا - مبنى سرايا الديب</p>
-        <a href="http://googleusercontent.com/maps.google.com/6" target="_blank" class="btn-location">🗺️ افتح موقعنا على الخريطة</a>
+        <a href="https://maps.google.com" target="_blank" class="btn-location">🗺️ افتح موقعنا على الخريطة</a>
     </div>
 
     <div class="section-title">قالوا عن عدستنا 💬</div>
