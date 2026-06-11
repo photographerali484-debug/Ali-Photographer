@@ -109,11 +109,12 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .package-details { text-align: right; }
-        .package-details strong { font-size: 15px; color: #fff; }
+        .package-details { text-align: right; max-width: 65%; }
+        .package-details strong { font-size: 15px; color: #fff; display: block; margin-bottom: 4px; }
+        .package-details span.desc { font-size: 12px; color: #b3b3b3; display: block; line-height: 1.4; }
         
         .price-box { display: flex; flex-direction: column; align-items: center; gap: 8px; }
-        .price { background: #d4af37; color: #000; padding: 6px 12px; border-radius: 10px; font-weight: bold; font-size: 13px; }
+        .price { background: #d4af37; color: #000; padding: 6px 12px; border-radius: 10px; font-weight: bold; font-size: 13px; white-space: nowrap; }
         
         /* تأثير الإضاءة النبضي (Glow) حول زر احجز الآن */
         .btn-select { 
@@ -216,7 +217,8 @@
     
     <div class="package" style="border: 1px solid #d4af37; background: rgba(212, 175, 55, 0.08);">
         <div class="package-details">
-            <strong style="color: #d4af37;">✨ صمم باكدج على ذوقك (حساب مخصص)</strong>
+            <strong style="color: #d4af37;">✨ صمم باكدج على ذوقك</strong>
+            <span class="desc">اختر الخدمات واحسب التكلفة تلقائياً</span>
         </div>
         <div class="price-box">
             <span class="price" style="background:#fff; color:#000;">💸 مرن</span>
@@ -227,6 +229,7 @@
     <div class="package" style="animation-delay: 0.1s;">
         <div class="package-details">
             <strong>باكدج كاملة (Full Day)</strong>
+            <span class="desc">سيشن + بارتي + تجهيزات + ألبوم</span>
         </div>
         <div class="price-box">
             <span class="price">6000 EGP</span>
@@ -237,6 +240,7 @@
     <div class="package" style="animation-delay: 0.2s;">
         <div class="package-details">
             <strong>الباكدج العادية</strong>
+            <span class="desc">سيشن + بارتي + ألبوم</span>
         </div>
         <div class="price-box">
             <span class="price">4500 EGP</span>
@@ -247,6 +251,7 @@
     <div class="package" style="animation-delay: 0.3s;">
         <div class="package-details">
             <strong>خطوبة أو كتب كتاب</strong>
+            <span class="desc">تصوير خطوبة - تصوير كتب كتاب</span>
         </div>
         <div class="price-box">
             <span class="price">2500 EGP</span>
@@ -254,31 +259,63 @@
         </div>
     </div>
 
-    <div class="section-title">سيشن فردي</div>
+    <div class="section-title">حجز تصوير فردي</div>
+    
     <div class="package" style="animation-delay: 0.4s;">
-        <div class="package-details"><strong>تصوير سيشن</strong></div>
-        <div class="price-box"><span class="price">3000 EGP</span><button class="btn-select" onclick="openBooking('سيشن فردي')">احجز الآن</button></div>
+        <div class="package-details">
+            <strong>تصوير سيشن</strong>
+            <span class="desc">جلسة تصوير خارجي مخصصة</span>
+        </div>
+        <div class="price-box">
+            <span class="price">3000 EGP</span>
+            <button class="btn-select" onclick="openBooking('تصوير سيشن فردي')">احجز الآن</button>
+        </div>
     </div>
+    
     <div class="package" style="animation-delay: 0.5s;">
-        <div class="package-details"><strong>تصوير بارتي</strong></div>
-        <div class="price-box"><span class="price">1500 EGP</span><button class="btn-select" onclick="openBooking('بارتي فردي')">احجز الآن</button></div>
+        <div class="package-details">
+            <strong>تصوير بارتي</strong>
+            <span class="desc">تصوير حفلة - قاعة - مناسبة</span>
+        </div>
+        <div class="price-box">
+            <span class="price">1500 EGP</span>
+            <button class="btn-select" onclick="openBooking('تصوير بارتي')">احجز الآن</button>
+        </div>
     </div>
+    
     <div class="package" style="animation-delay: 0.6s;">
-        <div class="package-details"><strong>تجهيزات</strong></div>
-        <div class="price-box"><span class="price">1000 EGP</span><button class="btn-select" onclick="openBooking('تجهيزات')">احجز الآن</button></div>
+        <div class="package-details">
+            <strong>تجهيزات</strong>
+            <span class="desc">تصوير كواليس وتجهيزات العروسين</span>
+        </div>
+        <div class="price-box">
+            <span class="price">1000 EGP</span>
+            <button class="btn-select" onclick="openBooking('تجهيزات كواليس')">احجز الآن</button>
+        </div>
     </div>
+    
     <div class="package" style="animation-delay: 0.7s;">
-        <div class="package-details"><strong>تصوير ريلز</strong></div>
-        <div class="price-box"><span class="price">1000 EGP</span><button class="btn-select" onclick="openBooking('ريلز فردي')">احجز الآن</button></div>
+        <div class="package-details">
+            <strong>تصوير ريلز</strong>
+            <span class="desc">فيديو قصير ومونتاج سينمائي سريع</span>
+        </div>
+        <div class="price-box">
+            <span class="price">1000 EGP</span>
+            <button class="btn-select" onclick="openBooking('تصوير ريلز')">احجز الآن</button>
+        </div>
     </div>
 
     <div class="section-title">الطباعة والتفاصيل الأخرى</div>
     <div class="package">
-        <div class="package-details"><strong>ألبوم أكريليك + تابلوه</strong></div>
+        <div class="package-details">
+            <strong>ألبوم أكريليك + تابلوه</strong>
+        </div>
         <div class="price-box"><span class="price">1000 EGP</span><button class="btn-select" onclick="openBooking('ألبوم أكريليك + تابلوه')">احجز الآن</button></div>
     </div>
     <div class="package">
-        <div class="package-details"><strong>ألبوم مقاس 30-45</strong></div>
+        <div class="package-details">
+            <strong>ألبوم مقاس 30-45</strong>
+        </div>
         <div class="price-box"><span class="price">700 EGP</span><button class="btn-select" onclick="openBooking('ألبوم 30-45')">احجز الآن</button></div>
     </div>
 
@@ -392,10 +429,10 @@
         <h3>✨ صمم باكدج على ذوقك</h3>
         <p style="text-align: center; color: #aaa; font-size: 11px; margin-bottom: 15px;">علم صح على خدمات اللي تناسب فرحك والموقع هيحسبها</p>
         
-        <div class="calc-item"><label><input type="checkbox" class="calc-check" data-price="3000" data-name="تصوير سيشن"> 📸 تصوير سيشن خارجي</label> <span>3000 ج</span></div>
-        <div class="calc-item"><label><input type="checkbox" class="calc-check" data-price="1500" data-name="تصوير بارتي"> 🥳 تصوير بارتي (حفلة)</label> <span>1500 ج</span></div>
-        <div class="calc-item"><label><input type="checkbox" class="calc-check" data-price="1000" data-name="تجهيزات كواليس"> 👰 تجهيزات وكواليس</label> <span>1000 ج</span></div>
-        <div class="calc-item"><label><input type="checkbox" class="calc-check" data-price="1000" data-name="تصوير ريلز سينمائي"> 📱 تصوير ريلز سينمائي</label> <span>1000 ج</span></div>
+        <div class="calc-item"><label><input type="checkbox" class="calc-check" data-price="3000" data-name="تصوير سيشن خارجي مخصصة"> 📸 تصوير سيشن خارجي</label> <span>3000 ج</span></div>
+        <div class="calc-item"><label><input type="checkbox" class="calc-check" data-price="1500" data-name="تصوير حفلة - قاعة - مناسبة"> 🥳 تصوير بارتي (حفلة)</label> <span>1500 ج</span></div>
+        <div class="calc-item"><label><input type="checkbox" class="calc-check" data-price="1000" data-name="تصوير كواليس وتجهيزات العروسين"> 👰 تجهيزات وكواليس</label> <span>1000 ج</span></div>
+        <div class="calc-item"><label><input type="checkbox" class="calc-check" data-price="1000" data-name="فيديو قصير ومونتاج سينمائي سريع"> 📱 تصوير ريلز سينمائي</label> <span>1000 ج</span></div>
         <div class="calc-item"><label><input type="checkbox" class="calc-check" data-price="1000" data-name="كاميرا إضافية"> 🎥 كاميرا تصوير إضافية</label> <span>1000 ج</span></div>
         <div class="calc-item"><label><input type="checkbox" class="calc-check" data-price="1000" data-name="ألبوم أكريليك + تابلوه"> 🖼️ ألبوم أكريليك + تابلوه</label> <span>1000 ج</span></div>
         <div class="calc-item"><label><input type="checkbox" class="calc-check" data-price="700" data-name="ألبوم 30-45"> 📖 ألبوم مقاس 30-45</label> <span>700 ج</span></div>
