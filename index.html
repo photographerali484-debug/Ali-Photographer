@@ -148,7 +148,6 @@
         .social-item.whatsapp-link { background: rgba(37, 211, 102, 0.1); border-color: rgba(37, 211, 102, 0.3); }
         .social-item.whatsapp-link:hover { border-color: #25d366; color: #25d366; }
         
-        /* أرقام الاتصالات مقسمة يمين وشمال */
         .office-calls-box {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -210,6 +209,22 @@
             line-height: 1.5;
         }
         .instapay-box strong { color: #d4af37; }
+        .instapay-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background: #d4af37;
+            color: #000;
+            text-decoration: none;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 13px;
+            margin: 6px 0;
+            transition: 0.3s;
+        }
+        .instapay-btn:hover { background: #fff; }
 
         .radio-group { background: rgba(255,255,255,0.02); padding: 10px; border-radius: 10px; border: 1px solid #222; margin-top: 5px; }
         .radio-label { display: flex !important; align-items: center; gap: 8px; color: #ccc !important; font-size: 12px !important; cursor: pointer; margin: 8px 0 !important; }
@@ -219,7 +234,6 @@
         .calc-item input { width: auto !important; cursor: pointer; }
         .total-price-box { background: #d4af37; color: #000; padding: 12px; border-radius: 12px; text-align: center; font-weight: bold; margin-top: 15px; font-size: 15px; }
 
-        /* تنسيقات الشروط والبنود لتظهر بوضوح */
         .checkbox-label { 
             display: flex !important; 
             align-items: flex-start; 
@@ -457,7 +471,6 @@
         <a href="https://www.tiktok.com/@ali_photographer1" target="_blank" class="social-item">تيك توك</a>
     </div>
 
-    <!-- أرقام الاتصال بالمكتب مقسمة لعمودين يمين وشمال -->
     <div class="office-calls-box">
         <strong>📞 أرقام اتصالات المكتب:</strong>
         <div class="office-phones-grid">
@@ -486,8 +499,11 @@
         <p id="packagePriceDisplay" style="color:#fff; font-size:14px; text-align:center; font-weight:bold; margin-top:0;"></p>
         
         <div class="instapay-box">
-            تأكيد الحجز بعربون كاش عبر <strong>InstaPay</strong>:<br>
-            <strong style="font-size: 15px; font-family: monospace; letter-spacing:1px;">01094019014</strong><br>
+            📌 <strong>تأكيد الحجز بعربون</strong><br>
+            للتحويل والدفع عبر <strong>InstaPay</strong> اضغط مباشرة على الرقم:<br>
+            <a href="javascript:void(0)" onclick="openInstaPay('01094019014')" class="instapay-btn">
+                📲 <span style="letter-spacing:1px; font-family:monospace;">01094019014</span>
+            </a><br>
             <small style="color:#ddd; font-size:11px;">(يرجى إرفاق سكرين شوت التحويل بعد الانتقال للواتساب)</small>
         </div>
 
@@ -508,7 +524,7 @@
         <label>رقم الواتساب للتواصل:</label>
         <input type="tel" id="clientWhatsapp" placeholder="اكتب رقمك هنا">
 
-        <label>تاريخ اليوم المطلوب:</label>
+        <label>تاريخ المناسبة:</label>
         <input type="date" id="eventDate">
 
         <label>مكان السيشن:</label>
@@ -523,13 +539,11 @@
             <label class="radio-label"><input type="radio" name="mediaShare" value="لا مش حابب أشارك أي صور على مواقع التواصل"> لا مش حابب أشارك أي صور على مواقع التواصل</label>
         </div>
 
-        <!-- البند المضاف حديثاً بخصوص تصفية الحساب يوم المناسبة -->
         <label class="checkbox-label-gold">
             <input type="checkbox" id="paymentClearAgree">
             الحساب بيكون خالص يوم المناسبة لسرعة الاستلام.
         </label>
 
-        <!-- التعديل المحدث على نص إلغاء الحجز والديبوزيت -->
         <label class="checkbox-label">
             <input type="checkbox" id="termsAgree">
             في حالة إلغاء الحجز لا يتم استرداد العربون ومتاح التأجيل.
@@ -552,8 +566,11 @@
         <p style="color:#d4af37; font-size:13px; text-align:center; font-weight:bold;">السعر: 300 EGP</p>
         
         <div class="instapay-box">
-            تأكيد الحجز بعربون كاش عبر <strong>InstaPay</strong>:<br>
-            <strong style="font-size: 15px; font-family: monospace; letter-spacing:1px;">01094019014</strong><br>
+            📌 <strong>تأكيد الحجز بعربون</strong><br>
+            للتحويل والدفع عبر <strong>InstaPay</strong> اضغط مباشرة على الرقم:<br>
+            <a href="javascript:void(0)" onclick="openInstaPay('01094019014')" class="instapay-btn">
+                📲 <span style="letter-spacing:1px; font-family:monospace;">01094019014</span>
+            </a><br>
             <small style="color:#ddd; font-size:11px;">(يرجى إرفاق سكرين شوت التحويل بعد الانتقال للواتساب)</small>
         </div>
 
@@ -563,7 +580,7 @@
         <label>رقم الواتساب للتواصل:</label>
         <input type="tel" id="bdayPhone" placeholder="رقم الموبايل">
 
-        <label>تاريخ الميعاد المطلوب:</label>
+        <label>تاريخ المناسبة:</label>
         <input type="date" id="bdayDate">
 
         <label>مكان أو موقع السيشن:</label>
@@ -596,8 +613,11 @@
         <p style="text-align: center; color: #aaa; font-size: 11px; margin-bottom: 15px;">علم صح على خدمات اللي تناسب فرحك والموقع هيحسبها</p>
 
         <div class="instapay-box">
-            تأكيد الحجز بعربون كاش عبر <strong>InstaPay</strong>:<br>
-            <strong style="font-size: 15px; font-family: monospace; letter-spacing:1px;">01094019014</strong><br>
+            📌 <strong>تأكيد الحجز بعربون</strong><br>
+            للتحويل والدفع عبر <strong>InstaPay</strong> اضغط مباشرة على الرقم:<br>
+            <a href="javascript:void(0)" onclick="openInstaPay('01094019014')" class="instapay-btn">
+                📲 <span style="letter-spacing:1px; font-family:monospace;">01094019014</span>
+            </a><br>
             <small style="color:#ddd; font-size:11px;">(يرجى إرفاق سكرين شوت التحويل بعد الانتقال للواتساب)</small>
         </div>
         
@@ -620,7 +640,7 @@
             <input type="text" id="custBride" placeholder="Bride's Name" style="direction: ltr; text-align: left;">
             <label>رقم واتساب العميل:</label>
             <input type="tel" id="custWhatsapp" placeholder="رقمك للتواصل">
-            <label>التاريخ المطلوب:</label>
+            <label>تاريخ المناسبة:</label>
             <input type="date" id="custDate">
             <label>مكان السيشن:</label>
             <input type="text" id="custSession" placeholder="مكان السيشن">
@@ -642,149 +662,128 @@
                 <input type="checkbox" id="custTerms">
                 في حالة إلغاء الحجز لا يتم استرداد العربون ومتاح التأجيل.
             </label>
-            
-            <label>لو في أي ملاحظات ممكن تكتبها هنا:</label>
-            <textarea id="custNotes" rows="2" placeholder="اكتب أي ملاحظات هنا..."></textarea>
-        </div>
 
-        <div class="popup-btns">
-            <button class="btn-confirm" onclick="sendToWhatsapp(true)">تأكيد الباكدج المخصصة 🚀</button>
-            <button class="btn-cancel" onclick="closeCustomCalc()">إلغاء</button>
+            <label>ملاحظات إضافية:</label>
+            <textarea id="custNotes" rows="2" placeholder="ملاحظات إضافية..."></textarea>
+            
+            <div class="popup-btns">
+                <button class="btn-confirm" onclick="sendCustomToWhatsapp()">تأكيد الحجز المخصص عبر واتساب 🚀</button>
+                <button class="btn-cancel" onclick="closeCustomCalc()">إلغاء</button>
+            </div>
         </div>
     </div>
 </div>
 
 <script>
-    let currentPkg = "";
-    let currentBasePrice = 0;
-    let isNormalPkgToggle = false;
+    let currentSelectedPkg = '';
+    let currentSelectedPrice = 0;
+    let isNormalPkg = false;
 
-    function openBooking(pkg, price, allowAlbumToggle) {
-        currentPkg = pkg;
-        currentBasePrice = price;
-        isNormalPkgToggle = allowAlbumToggle;
+    // فتح تطببيق InstaPay أو النسخ مع التوجيه
+    function openInstaPay(phoneNum) {
+        navigator.clipboard.writeText(phoneNum).then(() => {
+            alert("تم نسخ رقم InstaPay (" + phoneNum + ") بنجاح! يتم الآن فتح تطبيق InstaPay...");
+        }).catch(() => {});
 
-        document.getElementById('selectedPackageText').innerText = "طلب حجز: " + pkg;
+        setTimeout(() => {
+            window.location.href = "instapay://";
+            setTimeout(() => {
+                window.location.href = "https://instapay.eg";
+            }, 1000);
+        }, 500);
+    }
+
+    // آليات السلايدر للآراء
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.testimonial-slide');
+    if (slides.length > 0) {
+        slides[0].style.display = 'block';
+        setInterval(() => {
+            slides[currentSlide].style.display = 'none';
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].style.display = 'block';
+        }, 4000);
+    }
+
+    // وظائف الحجز العام
+    function openBooking(pkgName, price, isNormal = false) {
+        currentSelectedPkg = pkgName;
+        currentSelectedPrice = price;
+        isNormalPkg = isNormal;
+
+        document.getElementById('selectedPackageText').innerText = "الباكدج المختارة: " + pkgName;
         
         const albumBox = document.getElementById('albumOptionBox');
-        if (allowAlbumToggle) {
+        if (isNormal) {
             albumBox.style.display = 'block';
-            document.getElementById('albumTypeSelect').value = 'acrylic';
             updateAlbumPrice();
         } else {
             albumBox.style.display = 'none';
-            document.getElementById('packagePriceDisplay').innerText = "المبلغ: " + price + " EGP";
+            document.getElementById('packagePriceDisplay').innerText = "السعر الإجمالي: " + price + " EGP";
         }
-        
+
         document.getElementById('bookingPopup').style.display = 'flex';
     }
 
     function updateAlbumPrice() {
+        if (!isNormalPkg) return;
         const select = document.getElementById('albumTypeSelect');
-        const selectedPrice = select.options[select.selectedIndex].getAttribute('data-price');
-        currentBasePrice = selectedPrice;
-        document.getElementById('packagePriceDisplay').innerText = "المبلغ الإجمالي: " + selectedPrice + " EGP";
+        const price = select.options[select.selectedIndex].getAttribute('data-price');
+        currentSelectedPrice = price;
+        document.getElementById('packagePriceDisplay').innerText = "السعر الإجمالي: " + price + " EGP";
     }
 
-    function closePopup() { document.getElementById('bookingPopup').style.display = 'none'; }
-    
-    function openBirthdayBooking() { document.getElementById('birthdayPopup').style.display = 'flex'; }
-    function closeBirthdayPopup() { document.getElementById('birthdayPopup').style.display = 'none'; }
-    
-    function openCustomCalc() { document.getElementById('customCalcPopup').style.display = 'flex'; }
-    function closeCustomCalc() { document.getElementById('customCalcPopup').style.display = 'none'; }
+    function closePopup() {
+        document.getElementById('bookingPopup').style.display = 'none';
+    }
 
-    const checkboxes = document.querySelectorAll('.calc-check');
-    checkboxes.forEach(box => {
-        box.addEventListener('change', () => {
-            let total = 0;
-            checkboxes.forEach(item => {
-                if(item.checked) { total += parseInt(item.getAttribute('data-price')); }
-            });
-            document.getElementById('totalPriceDisplay').innerText = total;
-        });
-    });
+    function sendToWhatsapp() {
+        const groom = document.getElementById('groomName').value;
+        const bride = document.getElementById('brideName').value;
+        const phone = document.getElementById('clientWhatsapp').value;
+        const date = document.getElementById('eventDate').value;
+        const session = document.getElementById('sessionLoc').value;
+        const hall = document.getElementById('hallLoc').value;
+        const notes = document.getElementById('notes').value;
+        const clearAgree = document.getElementById('paymentClearAgree').checked;
+        const termsAgree = document.getElementById('termsAgree').checked;
+        const mediaShare = document.querySelector('input[name="mediaShare"]:checked').value;
 
-    function sendToWhatsapp(isCustom) {
-        let groom, bride, clientPhone, date, session, hall, notes, mediaOption, termsAgree, paymentClearAgree, text;
-        
-        if (!isCustom) {
-            groom = document.getElementById('groomName').value;
-            bride = document.getElementById('brideName').value;
-            clientPhone = document.getElementById('clientWhatsapp').value;
-            date = document.getElementById('eventDate').value;
-            session = document.getElementById('sessionLoc').value;
-            hall = document.getElementById('hallLoc').value;
-            notes = document.getElementById('notes').value;
-            mediaOption = document.querySelector('input[name="mediaShare"]:checked').value;
-            termsAgree = document.getElementById('termsAgree').checked;
-            paymentClearAgree = document.getElementById('paymentClearAgree').checked;
-            
-            if(!groom || !bride || !date || !clientPhone) { alert('من فضلك املأ الأسماء، التاريخ، ورقم الواتساب!'); return; }
-            if(!paymentClearAgree) { alert('يرجى الموافقة على شرط تسديد الحساب يوم المناسبة!'); return; }
-            if(!termsAgree) { alert('يجب الموافقة على شرط إلغاء الحجز والعربون!'); return; }
-
-            let albumDetail = "";
-            if(isNormalPkgToggle) {
-                const selectVal = document.getElementById('albumTypeSelect').value;
-                albumDetail = (selectVal === 'acrylic') ? " [نوع الألبوم المختاري: ألبوم أكريليك]" : " [نوع الألبوم المختاري: ألبوم عادي]";
-            }
-            
-            text = `أهلاً علي، حابب أستفسر عن توفر حجز و إرسال سكرين شوت العربون:\n` +
-                   `📌 الطلب: ${currentPkg}${albumDetail}\n` +
-                   `💰 السعر: ${currentBasePrice} EGP\n` +
-                   `🤵 اسم العريس (EN): ${groom}\n` +
-                   `👰 اسم العروسة (EN): ${bride}\n` +
-                   `📱 رقم الواتساب: ${clientPhone}\n` +
-                   `📅 التاريخ: ${date}\n` +
-                   `📸 مكان السيشن: ${session || 'لم يحدد بعد'}\n` +
-                   `🏢 مكان القاعة: ${hall || 'لم يحدد بعد'}\n` +
-                   `🌐 مشاركة الصور: ${mediaOption}\n` +
-                   `💵 تصفية الحساب: موافق على تسديد باقي الحساب يوم المناسبة لسرعة الاستلام ✅\n` +
-                   `💳 تأكيد العربون (InstaPay): جاري إرفاق سكرين شوت تحويل العربون ✅\n` +
-                   `⚖️ شرط العربون والتأجيل: تم الاطلاع والموافقة ✅\n` +
-                   `📝 ملاحظات العميل: ${notes || 'لا يوجد ملاحظات إضافية'}`;
-        } else {
-            groom = document.getElementById('custGroom').value;
-            bride = document.getElementById('custBride').value;
-            clientPhone = document.getElementById('custWhatsapp').value;
-            date = document.getElementById('custDate').value;
-            session = document.getElementById('custSession').value;
-            hall = document.getElementById('custHall').value;
-            notes = document.getElementById('custNotes').value;
-            mediaOption = document.querySelector('input[name="custMedia"]:checked').value;
-            termsAgree = document.getElementById('custTerms').checked;
-            paymentClearAgree = document.getElementById('custPaymentClearAgree').checked;
-            
-            let selectedServices = [];
-            checkboxes.forEach(item => {
-                if(item.checked) { selectedServices.push(item.getAttribute('data-name')); }
-            });
-            
-            if(selectedServices.length === 0) { alert('من فضلك اختار خدمة واحدة على الأقل لتصميم باكدجك!'); return; }
-            if(!groom || !bride || !date || !clientPhone) { alert('من فضلك املأ الأسماء، التاريخ، ورقم الواتساب!'); return; }
-            if(!paymentClearAgree) { alert('يرجى الموافقة على شرط تسديد الحساب يوم المناسبة!'); return; }
-            if(!termsAgree) { alert('يجب الموافقة على شرط إلغاء الحجز والعربون!'); return; }
-            
-            const totalCost = document.getElementById('totalPriceDisplay').innerText;
-            
-            text = `أهلاً علي، قمت بتصميم باكدج مخصصة عبر موقعك:\n` +
-                   `🛠️ الخدمات المختارة:\n - ${selectedServices.join('\n - ')}\n` +
-                   `💰 السعر الإجمالي: ${totalCost} EGP\n` +
-                   `🤵 اسم العريس (EN): ${groom}\n` +
-                   `👰 اسم العروسة (EN): ${bride}\n` +
-                   `📱 رقم الواتساب: ${clientPhone}\n` +
-                   `📅 التاريخ: ${date}\n` +
-                   `📸 مكان السيشن: ${session || 'لم يحدد بعد'}\n` +
-                   `🏢 مكان القاعة: ${hall || 'لم يحدد بعد'}\n` +
-                   `🌐 مشاركة الصور: ${mediaOption}\n` +
-                   `💵 تصفية الحساب: موافق على تسديد باقي الحساب يوم المناسبة لسرعة الاستلام ✅\n` +
-                   `💳 تأكيد العربون (InstaPay): جاري إرفاق سكرين شوت تحويل العربون ✅\n` +
-                   `⚖️ شرط العربون والتأجيل: تم الاطلاع والموافقة ✅\n` +
-                   `📝 ملاحظات العميل: ${notes || 'لا يوجد'}`;
+        if(!clearAgree || !termsAgree) {
+            alert("يرجى الموافقة على الشروط والأحكام وتصفية الحساب لإتمام الحجز");
+            return;
         }
-        
-        window.open(`https://wa.me/201505827390?text=${encodeURIComponent(text)}`, '_blank');
+
+        let albumInfo = '';
+        if(isNormalPkg) {
+            const select = document.getElementById('albumTypeSelect');
+            albumInfo = `\n📖 نوع الألبوم: ${select.options[select.selectedIndex].text}`;
+        }
+
+        let msg = `✨ *طلب حجز جديد - Ali Photographer* ✨\n\n`;
+        msg += `📦 *الباكدج:* ${currentSelectedPkg}\n`;
+        msg += `💰 *السعر:* ${currentSelectedPrice} EGP${albumInfo}\n\n`;
+        msg += `🤵 *اسم العريس:* ${groom}\n`;
+        msg += `👰 *اسم العروسة:* ${bride}\n`;
+        msg += `📱 *واتساب التواصل:* ${phone}\n`;
+        msg += `📅 *تاريخ المناسبة:* ${date}\n`;
+        msg += `📸 *مكان السيشن:* ${session}\n`;
+        msg += `🏰 *مكان القاعة:* ${hall}\n`;
+        msg += `📣 *مشاركة الميديا:* ${mediaShare}\n`;
+        msg += `✅ *الشروط:* تم الموافقة على الشروط وتصفية الحساب يوم المناسبة\n`;
+        if(notes) msg += `📝 *ملاحظات:* ${notes}\n`;
+
+        window.open(`https://wa.me/201122382861?text=${encodeURIComponent(msg)}`, '_blank');
+        closePopup();
+    }
+
+    // وظائف حجز سيشن عيد الميلاد
+    function openBirthdayBooking() {
+        document.getElementById('birthdayPopup').style.display = 'flex';
+    }
+
+    function closeBirthdayPopup() {
+        document.getElementById('birthdayPopup').style.display = 'none';
     }
 
     function sendBirthdayWhatsapp() {
@@ -793,45 +792,97 @@
         const date = document.getElementById('bdayDate').value;
         const loc = document.getElementById('bdayLoc').value;
         const notes = document.getElementById('bdayNotes').value;
-        const terms = document.getElementById('bdayTerms').checked;
-        const paymentClear = document.getElementById('bdayPaymentClearAgree').checked;
+        const clearAgree = document.getElementById('bdayPaymentClearAgree').checked;
+        const termsAgree = document.getElementById('bdayTerms').checked;
 
-        if(!name || !phone || !date) {
-            alert('من فضلك أدخل الاسم ورقم الموبايل وتاريخ المناسبة!');
-            return;
-        }
-        if(!paymentClear) {
-            alert('يرجى الموافقة على شرط تسديد باقي الحساب يوم المناسبة!');
-            return;
-        }
-        if(!terms) {
-            alert('برجاء الموافقة على شرط إلغاء الحجز والعربون!');
+        if(!clearAgree || !termsAgree) {
+            alert("يرجى الموافقة على الشروط والأحكام وتصفية الحساب لإتمام الحجز");
             return;
         }
 
-        const text = `أهلاً علي، حابب أأكد حجز سيشن عيد ميلاد (العرض الخاص 300 EGP):\n` +
-                     `👤 الاسم: ${name}\n` +
-                     `📱 رقم التواصل: ${phone}\n` +
-                     `📅 تاريخ المناسبة: ${date}\n` +
-                     `📍 المكان: ${loc || 'لم يحدد بعد'}\n` +
-                     `💵 تصفية الحساب: موافق على تسديد باقي الحساب يوم المناسبة لسرعة الاستلام ✅\n` +
-                     `💳 العربون (InstaPay): جاري إرفاق سكرين شوت تحويل العربون ✅\n` +
-                     `⚖️ شرط العربون والتأجيل: تم الاطلاع والموافقة ✅\n` +
-                     `📝 ملاحظات: ${notes || 'لا يوجد'}`;
+        let msg = `🎉 *طلب حجز سيشن عيد ميلاد* 🎉\n\n`;
+        msg += `💰 *السعر:* 300 EGP\n`;
+        msg += `👤 *الاسم:* ${name}\n`;
+        msg += `📱 *الموبايل:* ${phone}\n`;
+        msg += `📅 *تاريخ المناسبة:* ${date}\n`;
+        msg += `📍 *المكان:* ${loc}\n`;
+        msg += `✅ *الشروط:* تم الموافقة على تصفية الحساب يوم المناسبة والشروط العامة\n`;
+        if(notes) msg += `📝 *ملاحظات:* ${notes}\n`;
 
-        window.open(`https://wa.me/201505827390?text=${encodeURIComponent(text)}`, '_blank');
+        window.open(`https://wa.me/201122382861?text=${encodeURIComponent(msg)}`, '_blank');
+        closeBirthdayPopup();
     }
 
-    let slideIndex = 0;
-    function showSlides() {
-        const slides = document.getElementsByClassName("testimonial-slide");
-        for (let i = 0; i < slides.length; i++) { slides[i].style.display = "none"; }
-        slideIndex++;
-        if (slideIndex > slides.length) { slideIndex = 1; }
-        if(slides.length > 0) { slides[slideIndex-1].style.display = "block"; }
-        setTimeout(showSlides, 4000); 
+    // وظائف الحاسبة التفاعلية
+    function openCustomCalc() {
+        document.getElementById('customCalcPopup').style.display = 'flex';
     }
-    showSlides();
+
+    function closeCustomCalc() {
+        document.getElementById('customCalcPopup').style.display = 'none';
+    }
+
+    const calcChecks = document.querySelectorAll('.calc-check');
+    calcChecks.forEach(check => {
+        check.addEventListener('change', () => {
+            let total = 0;
+            calcChecks.forEach(c => {
+                if(c.checked) {
+                    total += parseInt(c.getAttribute('data-price'));
+                }
+            });
+            document.getElementById('totalPriceDisplay').innerText = total;
+        });
+    });
+
+    function sendCustomToWhatsapp() {
+        let total = 0;
+        let selectedServices = [];
+        calcChecks.forEach(c => {
+            if(c.checked) {
+                total += parseInt(c.getAttribute('data-price'));
+                selectedServices.push(c.getAttribute('data-name'));
+            }
+        });
+
+        if(selectedServices.length === 0) {
+            alert("برجاء اختيار خدمة واحدة على الأقل من الحاسبة");
+            return;
+        }
+
+        const groom = document.getElementById('custGroom').value;
+        const bride = document.getElementById('custBride').value;
+        const phone = document.getElementById('custWhatsapp').value;
+        const date = document.getElementById('custDate').value;
+        const session = document.getElementById('custSession').value;
+        const hall = document.getElementById('custHall').value;
+        const media = document.querySelector('input[name="custMedia"]:checked').value;
+        const clearAgree = document.getElementById('custPaymentClearAgree').checked;
+        const termsAgree = document.getElementById('custTerms').checked;
+        const notes = document.getElementById('custNotes').value;
+
+        if(!clearAgree || !termsAgree) {
+            alert("يرجى الموافقة على الشروط والأحكام وتصفية الحساب لإتمام الحجز");
+            return;
+        }
+
+        let msg = `🛠️ *حجز باكدج مخصصة (صمم باكدجك)* 🛠️\n\n`;
+        msg += `📋 *الخدمات المختارة:*\n - ${selectedServices.join('\n - ')}\n\n`;
+        msg += `💰 *إجمالي الحساب:* ${total} EGP\n\n`;
+        msg += `🤵 *العريس:* ${groom}\n`;
+        msg += `👰 *العروسة:* ${bride}\n`;
+        msg += `📱 *الواتساب:* ${phone}\n`;
+        msg += `📅 *تاريخ المناسبة:* ${date}\n`;
+        msg += `📸 *مكان السيشن:* ${session}\n`;
+        msg += `🏰 *مكان القاعة:* ${hall}\n`;
+        msg += `📣 *الميديا:* ${media}\n`;
+        msg += `✅ *الشروط:* تم الموافقة على تصفية الحساب والشروط العامة\n`;
+        if(notes) msg += `📝 *ملاحظات:* ${notes}\n`;
+
+        window.open(`https://wa.me/201122382861?text=${encodeURIComponent(msg)}`, '_blank');
+        closeCustomCalc();
+    }
 </script>
+
 </body>
 </html>
