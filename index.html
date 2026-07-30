@@ -139,7 +139,7 @@
 
         .address-box { background: rgba(255, 255, 255, 0.02); border-radius: 20px; padding: 18px; text-align: right; border: 1px dashed rgba(255, 255, 255, 0.1); margin-bottom: 20px; }
         .address-box p { margin: 0; font-size: 13px; color: #bbb; line-height: 1.6; }
-        .btn-location { background: #9e1a1a; color: #fff; text-decoration: none; display: block; padding: 12px; border-radius: 15px; font-size: 14px; font-weight: bold; margin-top: 15px; border: none; transition: 0.3s; }
+        .btn-location { background: #9e1a1a; color: #fff; text-decoration: none; display: block; padding: 12px; border-radius: 15px; font-size: 14px; font-weight: bold; margin-top: 15px; border: none; transition: 0.3s; text-align: center; }
         .btn-location:hover { background: #be2222; transform: translateY(-2px); }
 
         .social-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 20px; margin-bottom: 10px; }
@@ -216,12 +216,14 @@
             gap: 6px;
             background: #d4af37;
             color: #000;
-            text-decoration: none;
+            border: none;
             padding: 8px 14px;
             border-radius: 8px;
             font-weight: bold;
             font-size: 13px;
             margin: 6px 0;
+            cursor: pointer;
+            font-family: 'Cairo';
             transition: 0.3s;
         }
         .instapay-btn:hover { background: #fff; }
@@ -318,7 +320,7 @@
     <div class="package" style="border: 1px solid #d4af37; background: rgba(212, 175, 55, 0.08);">
         <div class="package-details">
             <strong style="color: #d4af37;">صمم باكدج على ذوقك</strong>
-            <span class="desc">اختر الخدمات</span>
+            <span class="desc">اختر الخدمات بنفسك</span>
         </div>
         <div class="price-box">
             <span class="price" style="background:#fff; color:#000;">💸 مرن</span>
@@ -326,7 +328,7 @@
         </div>
     </div>
     
-    <!-- 1. باكدج كاملة (Full Day) -->
+    <!-- Full Day -->
     <div class="package" style="animation-delay: 0.1s;">
         <div class="package-details">
             <strong>باكدج كاملة (Full Day)</strong>
@@ -334,19 +336,31 @@
         </div>
         <div class="price-box">
             <span class="price">6000 EGP</span>
-            <button class="btn-select" onclick="openBooking('باكدج كاملة Full Day', 6000, false)">احجز الآن</button>
+            <button class="btn-select" onclick="openBooking('باكدج كاملة Full Day', 6000)">احجز الآن</button>
         </div>
     </div>
 
-    <!-- 2. الباكدج العادية المدمجة -->
+    <!-- الباكدج 1 -->
     <div class="package" style="animation-delay: 0.2s;">
         <div class="package-details">
-            <strong>الباكدج العادية</strong>
-            <span class="desc">سيشن + بارتي + ألبوم (أكريليك أو عادي) + تابلوه + 2 ميدالية</span>
+            <strong>باكدج 1</strong>
+            <span class="desc">سيشن + بارتي + ألبوم أكريليك + 2 ميدالية</span>
         </div>
         <div class="price-box">
-            <span class="price" id="normalPkgPriceTag">5000 EGP</span>
-            <button class="btn-select" onclick="openBooking('الباكدج العادية', 5000, true)">احجز الآن</button>
+            <span class="price">5000 EGP</span>
+            <button class="btn-select" onclick="openBooking('باكدج 1', 5000)">احجز الآن</button>
+        </div>
+    </div>
+
+    <!-- الباكدج 2 -->
+    <div class="package" style="animation-delay: 0.25s;">
+        <div class="package-details">
+            <strong>باكدج 2</strong>
+            <span class="desc">سيشن + ألبوم عادي</span>
+        </div>
+        <div class="price-box">
+            <span class="price">3500 EGP</span>
+            <button class="btn-select" onclick="openBooking('باكدج 2', 3500)">احجز الآن</button>
         </div>
     </div>
 
@@ -357,7 +371,7 @@
         </div>
         <div class="price-box">
             <span class="price">2500 EGP</span>
-            <button class="btn-select" onclick="openBooking('خطوبة أو كتب كتاب', 2500, false)">احجز الآن</button>
+            <button class="btn-select" onclick="openBooking('خطوبة أو كتب كتاب', 2500)">احجز الآن</button>
         </div>
     </div>
 
@@ -371,7 +385,7 @@
         </div>
         <div class="price-box">
             <span class="price">5000 EGP</span>
-            <button class="btn-select" onclick="openBooking('تصوير برومو سينمائي', 5000, false)">احجز الآن</button>
+            <button class="btn-select" onclick="openBooking('تصوير برومو سينمائي', 5000)">احجز الآن</button>
         </div>
     </div>
 
@@ -382,7 +396,7 @@
         </div>
         <div class="price-box">
             <span class="price">3000 EGP</span>
-            <button class="btn-select" onclick="openBooking('تصوير سيشن فردي', 3000, false)">احجز الآن</button>
+            <button class="btn-select" onclick="openBooking('تصوير سيشن فردي', 3000)">احجز الآن</button>
         </div>
     </div>
     
@@ -393,7 +407,7 @@
         </div>
         <div class="price-box">
             <span class="price">1500 EGP</span>
-            <button class="btn-select" onclick="openBooking('تصوير بارتي', 1500, false)">احجز الآن</button>
+            <button class="btn-select" onclick="openBooking('تصوير بارتي', 1500)">احجز الآن</button>
         </div>
     </div>
     
@@ -404,7 +418,7 @@
         </div>
         <div class="price-box">
             <span class="price">1000 EGP</span>
-            <button class="btn-select" onclick="openBooking('تجهيزات كواليس', 1000, false)">احجز الآن</button>
+            <button class="btn-select" onclick="openBooking('تجهيزات كواليس', 1000)">احجز الآن</button>
         </div>
     </div>
     
@@ -415,7 +429,7 @@
         </div>
         <div class="price-box">
             <span class="price">1000 EGP</span>
-            <button class="btn-select" onclick="openBooking('تصوير ريلز', 1000, false)">احجز الآن</button>
+            <button class="btn-select" onclick="openBooking('تصوير ريلز', 1000)">احجز الآن</button>
         </div>
     </div>
 
@@ -424,13 +438,13 @@
         <div class="package-details">
             <strong>ألبوم أكريليك + تابلوه</strong>
         </div>
-        <div class="price-box"><span class="price">1000 EGP</span><button class="btn-select" onclick="openBooking('ألبوم أكريليك + تابلوه', 1000, false)">احجز الآن</button></div>
+        <div class="price-box"><span class="price">1000 EGP</span><button class="btn-select" onclick="openBooking('ألبوم أكريليك + تابلوه', 1000)">احجز الآن</button></div>
     </div>
     <div class="package">
         <div class="package-details">
             <strong>ألبوم مقاس 30-45</strong>
         </div>
-        <div class="price-box"><span class="price">500 EGP</span><button class="btn-select" onclick="openBooking('ألبوم 30-45', 500, false)">احجز الآن</button></div>
+        <div class="price-box"><span class="price">500 EGP</span><button class="btn-select" onclick="openBooking('ألبوم 30-45', 500)">احجز الآن</button></div>
     </div>
 
     <div class="section-title">إضافات (Extra)</div>
@@ -500,19 +514,11 @@
         
         <div class="instapay-box">
             📌 <strong>تأكيد الحجز بعربون</strong><br>
-            للتحويل والدفع عبر <strong>InstaPay</strong> اضغط مباشرة على الرقم:<br>
-            <a href="javascript:void(0)" onclick="openInstaPay('01094019014')" class="instapay-btn">
-                📲 <span style="letter-spacing:1px; font-family:monospace;">01094019014</span>
-            </a><br>
-            <small style="color:#ddd; font-size:11px;">(يرجى إرفاق سكرين شوت التحويل بعد الانتقال للواتساب)</small>
-        </div>
-
-        <div id="albumOptionBox" style="display: none; margin-bottom: 10px;">
-            <label>اختر نوع الألبوم المطلوب:</label>
-            <select id="albumTypeSelect" onchange="updateAlbumPrice()">
-                <option value="acrylic" data-price="5000">ألبوم أكريليك (السعر: 5000 EGP)</option>
-                <option value="normal" data-price="4500">ألبوم عادي (السعر: 4500 EGP)</option>
-            </select>
+            يمكنك نسخ رقم التحويل عبر InstaPay:<br>
+            <button class="instapay-btn" onclick="copyInstaPay('01094019014')">
+                📋 نسخ رقم انستا باي (01094019014)
+            </button><br>
+            <small style="color:#ddd; font-size:11px;">(سيتم إرفاق بيانات التحويل تلقائياً في رسالة الواتساب)</small>
         </div>
 
         <label>اسم العريس ( English ):</label>
@@ -553,7 +559,7 @@
         <textarea id="notes" rows="2" placeholder="اكتب ملاحظاتك أو أي إضافات تانية هنا..."></textarea>
         
         <div class="popup-btns">
-            <button class="btn-confirm" onclick="sendToWhatsapp(false)">تأكيد عبر واتساب 🚀</button>
+            <button class="btn-confirm" onclick="sendToWhatsapp()">تأكيد عبر واتساب 🚀</button>
             <button class="btn-cancel" onclick="closePopup()">إلغاء</button>
         </div>
     </div>
@@ -567,11 +573,11 @@
         
         <div class="instapay-box">
             📌 <strong>تأكيد الحجز بعربون</strong><br>
-            للتحويل والدفع عبر <strong>InstaPay</strong> اضغط مباشرة على الرقم:<br>
-            <a href="javascript:void(0)" onclick="openInstaPay('01094019014')" class="instapay-btn">
-                📲 <span style="letter-spacing:1px; font-family:monospace;">01094019014</span>
-            </a><br>
-            <small style="color:#ddd; font-size:11px;">(يرجى إرفاق سكرين شوت التحويل بعد الانتقال للواتساب)</small>
+            يمكنك نسخ رقم التحويل عبر InstaPay:<br>
+            <button class="instapay-btn" onclick="copyInstaPay('01094019014')">
+                📋 نسخ رقم انستا باي (01094019014)
+            </button><br>
+            <small style="color:#ddd; font-size:11px;">(سيتم إرفاق بيانات التحويل تلقائياً في رسالة الواتساب)</small>
         </div>
 
         <label>الاسم بالكامل:</label>
@@ -614,11 +620,11 @@
 
         <div class="instapay-box">
             📌 <strong>تأكيد الحجز بعربون</strong><br>
-            للتحويل والدفع عبر <strong>InstaPay</strong> اضغط مباشرة على الرقم:<br>
-            <a href="javascript:void(0)" onclick="openInstaPay('01094019014')" class="instapay-btn">
-                📲 <span style="letter-spacing:1px; font-family:monospace;">01094019014</span>
-            </a><br>
-            <small style="color:#ddd; font-size:11px;">(يرجى إرفاق سكرين شوت التحويل بعد الانتقال للواتساب)</small>
+            يمكنك نسخ رقم التحويل عبر InstaPay:<br>
+            <button class="instapay-btn" onclick="copyInstaPay('01094019014')">
+                📋 نسخ رقم انستا باي (01094019014)
+            </button><br>
+            <small style="color:#ddd; font-size:11px;">(سيتم إرفاق بيانات التحويل تلقائياً في رسالة الواتساب)</small>
         </div>
         
         <div class="calc-item"><label><input type="checkbox" class="calc-check" data-price="5000" data-name="تصوير برومو سينمائي"> 🎥 تصوير برومو سينمائي</label> <span>5000 ج</span></div>
@@ -677,20 +683,14 @@
 <script>
     let currentSelectedPkg = '';
     let currentSelectedPrice = 0;
-    let isNormalPkg = false;
 
-    // فتح تطببيق InstaPay أو النسخ مع التوجيه
-    function openInstaPay(phoneNum) {
+    // نسخ رقم انستا باي فوريًا
+    function copyInstaPay(phoneNum) {
         navigator.clipboard.writeText(phoneNum).then(() => {
-            alert("تم نسخ رقم InstaPay (" + phoneNum + ") بنجاح! يتم الآن فتح تطبيق InstaPay...");
-        }).catch(() => {});
-
-        setTimeout(() => {
-            window.location.href = "instapay://";
-            setTimeout(() => {
-                window.location.href = "https://instapay.eg";
-            }, 1000);
-        }, 500);
+            alert("تم نسخ رقم InstaPay (" + phoneNum + ") بنجاح!");
+        }).catch(() => {
+            alert("الرقم هو: " + phoneNum);
+        });
     }
 
     // آليات السلايدر للآراء
@@ -706,31 +706,13 @@
     }
 
     // وظائف الحجز العام
-    function openBooking(pkgName, price, isNormal = false) {
+    function openBooking(pkgName, price) {
         currentSelectedPkg = pkgName;
         currentSelectedPrice = price;
-        isNormalPkg = isNormal;
 
         document.getElementById('selectedPackageText').innerText = "الباكدج المختارة: " + pkgName;
-        
-        const albumBox = document.getElementById('albumOptionBox');
-        if (isNormal) {
-            albumBox.style.display = 'block';
-            updateAlbumPrice();
-        } else {
-            albumBox.style.display = 'none';
-            document.getElementById('packagePriceDisplay').innerText = "السعر الإجمالي: " + price + " EGP";
-        }
-
-        document.getElementById('bookingPopup').style.display = 'flex';
-    }
-
-    function updateAlbumPrice() {
-        if (!isNormalPkg) return;
-        const select = document.getElementById('albumTypeSelect');
-        const price = select.options[select.selectedIndex].getAttribute('data-price');
-        currentSelectedPrice = price;
         document.getElementById('packagePriceDisplay').innerText = "السعر الإجمالي: " + price + " EGP";
+        document.getElementById('bookingPopup').style.display = 'flex';
     }
 
     function closePopup() {
@@ -754,15 +736,9 @@
             return;
         }
 
-        let albumInfo = '';
-        if(isNormalPkg) {
-            const select = document.getElementById('albumTypeSelect');
-            albumInfo = `\n📖 نوع الألبوم: ${select.options[select.selectedIndex].text}`;
-        }
-
         let msg = `✨ *طلب حجز جديد - Ali Photographer* ✨\n\n`;
         msg += `📦 *الباكدج:* ${currentSelectedPkg}\n`;
-        msg += `💰 *السعر:* ${currentSelectedPrice} EGP${albumInfo}\n\n`;
+        msg += `💰 *السعر:* ${currentSelectedPrice} EGP\n\n`;
         msg += `🤵 *اسم العريس:* ${groom}\n`;
         msg += `👰 *اسم العروسة:* ${bride}\n`;
         msg += `📱 *واتساب التواصل:* ${phone}\n`;
@@ -770,6 +746,7 @@
         msg += `📸 *مكان السيشن:* ${session}\n`;
         msg += `🏰 *مكان القاعة:* ${hall}\n`;
         msg += `📣 *مشاركة الميديا:* ${mediaShare}\n`;
+        msg += `💳 *رقم InstaPay للتحويل:* 01094019014\n`;
         msg += `✅ *الشروط:* تم الموافقة على الشروط وتصفية الحساب يوم المناسبة\n`;
         if(notes) msg += `📝 *ملاحظات:* ${notes}\n`;
 
@@ -806,6 +783,7 @@
         msg += `📱 *الموبايل:* ${phone}\n`;
         msg += `📅 *تاريخ المناسبة:* ${date}\n`;
         msg += `📍 *المكان:* ${loc}\n`;
+        msg += `💳 *رقم InstaPay للتحويل:* 01094019014\n`;
         msg += `✅ *الشروط:* تم الموافقة على تصفية الحساب يوم المناسبة والشروط العامة\n`;
         if(notes) msg += `📝 *ملاحظات:* ${notes}\n`;
 
@@ -876,6 +854,7 @@
         msg += `📸 *مكان السيشن:* ${session}\n`;
         msg += `🏰 *مكان القاعة:* ${hall}\n`;
         msg += `📣 *الميديا:* ${media}\n`;
+        msg += `💳 *رقم InstaPay للتحويل:* 01094019014\n`;
         msg += `✅ *الشروط:* تم الموافقة على تصفية الحساب والشروط العامة\n`;
         if(notes) msg += `📝 *ملاحظات:* ${notes}\n`;
 
