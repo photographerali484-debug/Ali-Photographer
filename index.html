@@ -6,7 +6,6 @@
     <title>Ali Photographer International</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* ثيم Background الفخم مع تعديل نسبة الشفافية */
         body { 
             background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
                         url('my-bg.jpg'); 
@@ -67,7 +66,6 @@
         
         .section-title { text-align: right; color: #d4af37; border-right: 3px solid #d4af37; padding-right: 10px; margin: 30px 0 15px 0; font-size: 16px; font-weight: bold; }
         
-        /* تنسيق كروت العروض */
         .offer-card {
             background: rgba(212, 175, 55, 0.07);
             border: 1px solid rgba(212, 175, 55, 0.3);
@@ -150,20 +148,40 @@
         .social-item.whatsapp-link { background: rgba(37, 211, 102, 0.1); border-color: rgba(37, 211, 102, 0.3); }
         .social-item.whatsapp-link:hover { border-color: #25d366; color: #25d366; }
         
-        /* أرقام الاتصال بالمكتب المضافة بصورة غير ملفتة */
+        /* أرقام الاتصالات مقسمة يمين وشمال */
         .office-calls-box {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 15px;
-            padding: 12px;
+            padding: 15px;
             margin-top: 25px;
             font-size: 12px;
             color: #888;
         }
-        .office-calls-box strong { color: #aaa; display: block; margin-bottom: 6px; }
-        .office-phones-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-        .office-phones-list a { color: #aaa; text-decoration: none; direction: ltr; font-family: monospace; font-size: 12px; }
-        .office-phones-list a:hover { color: #d4af37; }
+        .office-calls-box strong { color: #d4af37; display: block; margin-bottom: 10px; font-size: 13px; }
+        .office-phones-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            direction: ltr;
+        }
+        .phone-column {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .office-phones-grid a { 
+            color: #aaa; 
+            text-decoration: none; 
+            font-family: monospace; 
+            font-size: 13px; 
+            background: rgba(255, 255, 255, 0.03);
+            padding: 6px 8px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: 0.3s;
+        }
+        .office-phones-grid a:hover { color: #d4af37; border-color: #d4af37; }
 
         .testimonials-container { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 20px; padding: 20px; overflow: hidden; position: relative; margin-top: 20px; height: 95px; }
         .testimonial-slide { display: none; text-align: center; animation: fadeTesti 0.8s ease-in-out; }
@@ -178,17 +196,18 @@
         .popup-content { background: #111; border: 1px solid #d4af37; padding: 25px; border-radius: 25px; max-width: 400px; width: 100%; text-align: right; max-height: 90vh; overflow-y: auto; box-sizing: border-box; }
         .popup h3 { margin-top: 0; color: #d4af37; text-align: center; font-size: 18px; }
         .popup label { display: block; margin: 12px 0 5px; font-size: 13px; color: #d4af37; }
-        .popup input, .popup textarea { width: 100%; padding: 12px; background: #1a1a1a; border: 1px solid #333; border-radius: 10px; color: #fff; font-family: 'Cairo'; box-sizing: border-box; font-size: 13px; }
+        .popup input, .popup textarea, .popup select { width: 100%; padding: 12px; background: #1a1a1a; border: 1px solid #333; border-radius: 10px; color: #fff; font-family: 'Cairo'; box-sizing: border-box; font-size: 13px; }
         
         .instapay-box {
             background: rgba(212, 175, 55, 0.1);
             border: 1px dashed #d4af37;
-            padding: 10px;
-            border-radius: 10px;
+            padding: 12px;
+            border-radius: 12px;
             margin: 10px 0;
             font-size: 12px;
             color: #fff;
             text-align: center;
+            line-height: 1.5;
         }
         .instapay-box strong { color: #d4af37; }
 
@@ -200,7 +219,7 @@
         .calc-item input { width: auto !important; cursor: pointer; }
         .total-price-box { background: #d4af37; color: #000; padding: 12px; border-radius: 12px; text-align: center; font-weight: bold; margin-top: 15px; font-size: 15px; }
 
-        /* تعديل حجم الخط وإبراز شرط الحجز والـ Deposit */
+        /* تنسيقات الشروط والبنود لتظهر بوضوح */
         .checkbox-label { 
             display: flex !important; 
             align-items: flex-start; 
@@ -209,14 +228,31 @@
             font-size: 12.5px !important; 
             font-weight: bold;
             cursor: pointer; 
-            margin: 15px 0 5px 0 !important; 
+            margin: 10px 0 !important; 
             line-height: 1.5; 
             background: rgba(255, 0, 0, 0.08); 
-            padding: 12px; 
+            padding: 10px; 
             border-radius: 12px; 
             border: 1px dashed rgba(255, 82, 82, 0.4); 
         }
         .checkbox-label input { width: auto !important; margin-top: 3px; cursor: pointer; }
+
+        .checkbox-label-gold {
+            display: flex !important; 
+            align-items: flex-start; 
+            gap: 8px; 
+            color: #f0e6d2 !important; 
+            font-size: 12.5px !important; 
+            font-weight: bold;
+            cursor: pointer; 
+            margin: 10px 0 !important; 
+            line-height: 1.5; 
+            background: rgba(212, 175, 55, 0.1); 
+            padding: 10px; 
+            border-radius: 12px; 
+            border: 1px dashed rgba(212, 175, 55, 0.4);
+        }
+        .checkbox-label-gold input { width: auto !important; margin-top: 3px; cursor: pointer; }
 
         .popup-btns { display: flex; gap: 10px; margin-top: 20px; }
         .btn-confirm { background: #d4af37; color: #000; border: none; padding: 12px; border-radius: 12px; font-weight: bold; flex: 2; cursor: pointer; font-family: 'Cairo'; font-size: 14px; }
@@ -237,7 +273,7 @@
         ✨ "يومكم المميز هو أمانة في قلبي قبل عدستي.. شكراً لثقتكم التي تجعل من عملي فناً" 🤍
     </div>
 
-    <!-- 🔥 قسم العروض الخاصة 🔥 -->
+    <!-- 🔥 قسم العروض الحصرية 🔥 -->
     <div class="section-title">🔥 العروض الحصرية</div>
     
     <div class="offer-card">
@@ -251,12 +287,18 @@
     <div class="offer-card" style="background: rgba(37, 211, 102, 0.05); border-color: rgba(37, 211, 102, 0.2);">
         <span class="offer-badge" style="background:#25d366; color:#fff;">🎉 عرض طول الشهر</span>
         <div style="display:flex; justify-content:space-between; align-items:center; margin-top:5px;">
-            <span style="font-size:14px; color:#fff; font-weight:bold;">🎂 سيشن عيد ميلاد</span>
-            <span class="price">300 EGP</span>
+            <div>
+                <strong style="font-size:14px; color:#fff; display:block;">🎂 سيشن عيد ميلاد</strong>
+                <span style="font-size:11px; color:#aaa;">حجز سيشن عيد ميلاد وتأكيد الحجز</span>
+            </div>
+            <div class="price-box">
+                <span class="price">300 EGP</span>
+                <button class="btn-select" onclick="openBirthdayBooking()">احجز الآن</button>
+            </div>
         </div>
     </div>
 
-    <!-- قسم الباكدجات بالحجم والترتيب الجديد -->
+    <!-- قسم الباكدجات -->
     <div class="section-title">العروض والباكدجات</div>
     
     <div class="package" style="border: 1px solid #d4af37; background: rgba(212, 175, 55, 0.08);">
@@ -274,104 +316,92 @@
     <div class="package" style="animation-delay: 0.1s;">
         <div class="package-details">
             <strong>باكدج كاملة (Full Day)</strong>
-            <span class="desc">سيشن + بارتي + تجهيزات + ألبوم أكريليك + 2 تابلوه + 2 ميدالية</span>
+            <span class="desc">سيشن + بارتي + تجهيزات + ألبوم أكريليك + تابلوه + 2 ميدالية</span>
         </div>
         <div class="price-box">
             <span class="price">6000 EGP</span>
-            <button class="btn-select" onclick="openBooking('باكدج كاملة Full Day')">احجز الآن</button>
+            <button class="btn-select" onclick="openBooking('باكدج كاملة Full Day', 6000, false)">احجز الآن</button>
         </div>
     </div>
 
-    <!-- 2. الباكدج العادية 5000 -->
+    <!-- 2. الباكدج العادية المدمجة -->
     <div class="package" style="animation-delay: 0.2s;">
         <div class="package-details">
             <strong>الباكدج العادية</strong>
-            <span class="desc">سيشن + بارتي + ألبوم أكريليك + تابلوه + 2 ميدالية</span>
+            <span class="desc">سيشن + بارتي + ألبوم (أكريليك أو عادي) + تابلوه + 2 ميدالية</span>
         </div>
         <div class="price-box">
-            <span class="price">5000 EGP</span>
-            <button class="btn-select" onclick="openBooking('الباكدج العادية 5000')">احجز الآن</button>
+            <span class="price" id="normalPkgPriceTag">5000 EGP</span>
+            <button class="btn-select" onclick="openBooking('الباكدج العادية', 5000, true)">احجز الآن</button>
         </div>
     </div>
 
-    <!-- 3. الباكدج العادية 4500 -->
     <div class="package" style="animation-delay: 0.3s;">
-        <div class="package-details">
-            <strong>الباكدج العادية</strong>
-            <span class="desc">سيشن + بارتي + ألبوم عادي</span>
-        </div>
-        <div class="price-box">
-            <span class="price">4500 EGP</span>
-            <button class="btn-select" onclick="openBooking('الباكدج العادية 4500')">احجز الآن</button>
-        </div>
-    </div>
-
-    <div class="package" style="animation-delay: 0.4s;">
         <div class="package-details">
             <strong>خطوبة أو كتب كتاب</strong>
             <span class="desc">تصوير خطوبة - تصوير كتب كتاب</span>
         </div>
         <div class="price-box">
             <span class="price">2500 EGP</span>
-            <button class="btn-select" onclick="openBooking('خطوبة أو كتب كتاب')">احجز الآن</button>
+            <button class="btn-select" onclick="openBooking('خطوبة أو كتب كتاب', 2500, false)">احجز الآن</button>
         </div>
     </div>
 
     <!-- قسم تصوير فردي -->
     <div class="section-title">تصوير فردي</div>
     
-    <div class="package" style="animation-delay: 0.5s;">
+    <div class="package" style="animation-delay: 0.4s;">
         <div class="package-details">
             <strong>تصوير برومو سينمائي</strong>
             <span class="desc">تصوير ومونتاج للفيديو</span>
         </div>
         <div class="price-box">
             <span class="price">5000 EGP</span>
-            <button class="btn-select" onclick="openBooking('تصوير برومو سينمائي')">احجز الآن</button>
+            <button class="btn-select" onclick="openBooking('تصوير برومو سينمائي', 5000, false)">احجز الآن</button>
         </div>
     </div>
 
-    <div class="package" style="animation-delay: 0.6s;">
+    <div class="package" style="animation-delay: 0.5s;">
         <div class="package-details">
             <strong>تصوير سيشن</strong>
             <span class="desc">جلسة تصوير خارجي مخصصة</span>
         </div>
         <div class="price-box">
             <span class="price">3000 EGP</span>
-            <button class="btn-select" onclick="openBooking('تصوير سيشن فردي')">احجز الآن</button>
+            <button class="btn-select" onclick="openBooking('تصوير سيشن فردي', 3000, false)">احجز الآن</button>
         </div>
     </div>
     
-    <div class="package" style="animation-delay: 0.7s;">
+    <div class="package" style="animation-delay: 0.6s;">
         <div class="package-details">
             <strong>تصوير بارتي</strong>
             <span class="desc">تصوير حفلة - قاعة - مناسبة</span>
         </div>
         <div class="price-box">
             <span class="price">1500 EGP</span>
-            <button class="btn-select" onclick="openBooking('تصوير بارتي')">احجز الآن</button>
+            <button class="btn-select" onclick="openBooking('تصوير بارتي', 1500, false)">احجز الآن</button>
         </div>
     </div>
     
-    <div class="package" style="animation-delay: 0.8s;">
+    <div class="package" style="animation-delay: 0.7s;">
         <div class="package-details">
             <strong>تجهيزات</strong>
             <span class="desc">تصوير كواليس وتجهيزات العروسين</span>
         </div>
         <div class="price-box">
             <span class="price">1000 EGP</span>
-            <button class="btn-select" onclick="openBooking('تجهيزات كواليس')">احجز الآن</button>
+            <button class="btn-select" onclick="openBooking('تجهيزات كواليس', 1000, false)">احجز الآن</button>
         </div>
     </div>
     
-    <div class="package" style="animation-delay: 0.9s;">
+    <div class="package" style="animation-delay: 0.8s;">
         <div class="package-details">
             <strong>تصوير ريلز</strong>
             <span class="desc">فيديو قصير ومونتاج سينمائي سريع</span>
         </div>
         <div class="price-box">
             <span class="price">1000 EGP</span>
-            <button class="btn-select" onclick="openBooking('تصوير ريلز')">احجز الآن</button>
+            <button class="btn-select" onclick="openBooking('تصوير ريلز', 1000, false)">احجز الآن</button>
         </div>
     </div>
 
@@ -380,13 +410,13 @@
         <div class="package-details">
             <strong>ألبوم أكريليك + تابلوه</strong>
         </div>
-        <div class="price-box"><span class="price">1000 EGP</span><button class="btn-select" onclick="openBooking('ألبوم أكريليك + تابلوه')">احجز الآن</button></div>
+        <div class="price-box"><span class="price">1000 EGP</span><button class="btn-select" onclick="openBooking('ألبوم أكريليك + تابلوه', 1000, false)">احجز الآن</button></div>
     </div>
     <div class="package">
         <div class="package-details">
             <strong>ألبوم مقاس 30-45</strong>
         </div>
-        <div class="price-box"><span class="price">500 EGP</span><button class="btn-select" onclick="openBooking('ألبوم 30-45')">احجز الآن</button></div>
+        <div class="price-box"><span class="price">500 EGP</span><button class="btn-select" onclick="openBooking('ألبوم 30-45', 500, false)">احجز الآن</button></div>
     </div>
 
     <div class="section-title">إضافات (Extra)</div>
@@ -420,21 +450,25 @@
 
     <div class="section-title">تابعنا على</div>
     <div class="social-grid">
-        <a href="https://wa.me/201505827390" target="_blank" class="social-item whatsapp-link">🟢 Ali WhatsApp</a>
+        <a href="https://wa.me/201505827390" target="_blank" class="social-item whatsapp-link">🟢 رقم المكتب</a>
         <a href="https://wa.me/201122382861" target="_blank" class="social-item whatsapp-link">🟢 Ali WhatsApp</a>
         <a href="https://www.facebook.com/profile.php?id=100044231569504" target="_blank" class="social-item">فيسبوك</a>
         <a href="https://www.instagram.com/ali_photographer_international" target="_blank" class="social-item">إنستجرام</a>
         <a href="https://www.tiktok.com/@ali_photographer1" target="_blank" class="social-item">تيك توك</a>
     </div>
 
-    <!-- قسم أرقام اتصال المكتب غير ملفت وبأسلوب هادئ -->
+    <!-- أرقام الاتصال بالمكتب مقسمة لعمودين يمين وشمال -->
     <div class="office-calls-box">
         <strong>📞 أرقام اتصالات المكتب:</strong>
-        <div class="office-phones-list">
-            <a href="tel:01122382861">01122382861</a> |
-            <a href="tel:01009292635">01009292635</a> |
-            <a href="tel:01505827390">01505827390</a> |
-            <a href="tel:01094019014">01094019014</a>
+        <div class="office-phones-grid">
+            <div class="phone-column">
+                <a href="tel:01505827390">01505827390</a>
+                <a href="tel:01094019014">01094019014</a>
+            </div>
+            <div class="phone-column">
+                <a href="tel:01122382861">01122382861</a>
+                <a href="tel:01009292635">01009292635</a>
+            </div>
         </div>
     </div>
 
@@ -444,15 +478,25 @@
     </div>
 </div>
 
-<!-- نافذة الحجز العادية -->
+<!-- نافذة الحجز العامة -->
 <div id="bookingPopup" class="popup">
     <div class="popup-content">
         <h3>تفاصيل الحجز 📝</h3>
-        <p id="selectedPackageText" style="color:#d4af37; font-size:12px; text-align:center; margin-bottom: 5px;"></p>
+        <p id="selectedPackageText" style="color:#d4af37; font-size:13px; text-align:center; font-weight:bold; margin-bottom: 5px;"></p>
+        <p id="packagePriceDisplay" style="color:#fff; font-size:14px; text-align:center; font-weight:bold; margin-top:0;"></p>
         
         <div class="instapay-box">
             تأكيد الحجز بعربون كاش عبر <strong>InstaPay</strong>:<br>
-            <strong style="font-size: 14px; font-family: monospace;">01094019014</strong>
+            <strong style="font-size: 15px; font-family: monospace; letter-spacing:1px;">01094019014</strong><br>
+            <small style="color:#ddd; font-size:11px;">(يرجى إرفاق سكرين شوت التحويل بعد الانتقال للواتساب)</small>
+        </div>
+
+        <div id="albumOptionBox" style="display: none; margin-bottom: 10px;">
+            <label>اختر نوع الألبوم المطلوب:</label>
+            <select id="albumTypeSelect" onchange="updateAlbumPrice()">
+                <option value="acrylic" data-price="5000">ألبوم أكريليك (السعر: 5000 EGP)</option>
+                <option value="normal" data-price="4500">ألبوم عادي (السعر: 4500 EGP)</option>
+            </select>
         </div>
 
         <label>اسم العريس ( English ):</label>
@@ -479,9 +523,16 @@
             <label class="radio-label"><input type="radio" name="mediaShare" value="لا مش حابب أشارك أي صور على مواقع التواصل"> لا مش حابب أشارك أي صور على مواقع التواصل</label>
         </div>
 
+        <!-- البند المضاف حديثاً بخصوص تصفية الحساب يوم المناسبة -->
+        <label class="checkbox-label-gold">
+            <input type="checkbox" id="paymentClearAgree">
+            الحساب بيكون خالص يوم المناسبة لسرعة الاستلام.
+        </label>
+
+        <!-- التعديل المحدث على نص إلغاء الحجز والديبوزيت -->
         <label class="checkbox-label">
             <input type="checkbox" id="termsAgree">
-            في حالة إلغاء الحجز لا يتم استرداد الديبوزيت ومتاح التأجيل.
+            في حالة إلغاء الحجز لا يتم استرداد العربون ومتاح التأجيل.
         </label>
 
         <label>لو في أي ملاحظات ممكن تكتبها هنا:</label>
@@ -494,6 +545,50 @@
     </div>
 </div>
 
+<!-- نافذة حجز سيشن عيد الميلاد -->
+<div id="birthdayPopup" class="popup">
+    <div class="popup-content">
+        <h3>🎉 حجز سيشن عيد ميلاد</h3>
+        <p style="color:#d4af37; font-size:13px; text-align:center; font-weight:bold;">السعر: 300 EGP</p>
+        
+        <div class="instapay-box">
+            تأكيد الحجز بعربون كاش عبر <strong>InstaPay</strong>:<br>
+            <strong style="font-size: 15px; font-family: monospace; letter-spacing:1px;">01094019014</strong><br>
+            <small style="color:#ddd; font-size:11px;">(يرجى إرفاق سكرين شوت التحويل بعد الانتقال للواتساب)</small>
+        </div>
+
+        <label>الاسم بالكامل:</label>
+        <input type="text" id="bdayName" placeholder="اكتب اسمك هنا">
+
+        <label>رقم الواتساب للتواصل:</label>
+        <input type="tel" id="bdayPhone" placeholder="رقم الموبايل">
+
+        <label>تاريخ الميعاد المطلوب:</label>
+        <input type="date" id="bdayDate">
+
+        <label>مكان أو موقع السيشن:</label>
+        <input type="text" id="bdayLoc" placeholder="المكان المقترح للسيشن">
+
+        <label class="checkbox-label-gold">
+            <input type="checkbox" id="bdayPaymentClearAgree">
+            الحساب بيكون خالص يوم المناسبة لسرعة الاستلام.
+        </label>
+
+        <label class="checkbox-label">
+            <input type="checkbox" id="bdayTerms">
+            في حالة إلغاء الحجز لا يتم استرداد العربون ومتاح التأجيل.
+        </label>
+
+        <label>ملاحظات إضافية:</label>
+        <textarea id="bdayNotes" rows="2" placeholder="أعمال ديكور خاصة، أو إضافات معينة..."></textarea>
+        
+        <div class="popup-btns">
+            <button class="btn-confirm" onclick="sendBirthdayWhatsapp()">تأكيد الحجز عبر واتساب 🚀</button>
+            <button class="btn-cancel" onclick="closeBirthdayPopup()">إلغاء</button>
+        </div>
+    </div>
+</div>
+
 <!-- نافذة الحاسبة التفاعلية -->
 <div id="customCalcPopup" class="popup">
     <div class="popup-content">
@@ -502,7 +597,8 @@
 
         <div class="instapay-box">
             تأكيد الحجز بعربون كاش عبر <strong>InstaPay</strong>:<br>
-            <strong style="font-size: 14px; font-family: monospace;">01094019014</strong>
+            <strong style="font-size: 15px; font-family: monospace; letter-spacing:1px;">01094019014</strong><br>
+            <small style="color:#ddd; font-size:11px;">(يرجى إرفاق سكرين شوت التحويل بعد الانتقال للواتساب)</small>
         </div>
         
         <div class="calc-item"><label><input type="checkbox" class="calc-check" data-price="5000" data-name="تصوير برومو سينمائي"> 🎥 تصوير برومو سينمائي</label> <span>5000 ج</span></div>
@@ -537,9 +633,14 @@
                 <label class="radio-label"><input type="radio" name="custMedia" value="لا مش حابب أشارك أي صور"> لا مش حابب النشر</label>
             </div>
             
+            <label class="checkbox-label-gold">
+                <input type="checkbox" id="custPaymentClearAgree">
+                الحساب بيكون خالص يوم المناسبة لسرعة الاستلام.
+            </label>
+
             <label class="checkbox-label">
                 <input type="checkbox" id="custTerms">
-                في حالة إلغاء الحجز لا يتم استرداد الديبوزيت ومتاح التأجيل.
+                في حالة إلغاء الحجز لا يتم استرداد العربون ومتاح التأجيل.
             </label>
             
             <label>لو في أي ملاحظات ممكن تكتبها هنا:</label>
@@ -555,13 +656,41 @@
 
 <script>
     let currentPkg = "";
-    
-    function openBooking(pkg) {
+    let currentBasePrice = 0;
+    let isNormalPkgToggle = false;
+
+    function openBooking(pkg, price, allowAlbumToggle) {
         currentPkg = pkg;
+        currentBasePrice = price;
+        isNormalPkgToggle = allowAlbumToggle;
+
         document.getElementById('selectedPackageText').innerText = "طلب حجز: " + pkg;
+        
+        const albumBox = document.getElementById('albumOptionBox');
+        if (allowAlbumToggle) {
+            albumBox.style.display = 'block';
+            document.getElementById('albumTypeSelect').value = 'acrylic';
+            updateAlbumPrice();
+        } else {
+            albumBox.style.display = 'none';
+            document.getElementById('packagePriceDisplay').innerText = "المبلغ: " + price + " EGP";
+        }
+        
         document.getElementById('bookingPopup').style.display = 'flex';
     }
+
+    function updateAlbumPrice() {
+        const select = document.getElementById('albumTypeSelect');
+        const selectedPrice = select.options[select.selectedIndex].getAttribute('data-price');
+        currentBasePrice = selectedPrice;
+        document.getElementById('packagePriceDisplay').innerText = "المبلغ الإجمالي: " + selectedPrice + " EGP";
+    }
+
     function closePopup() { document.getElementById('bookingPopup').style.display = 'none'; }
+    
+    function openBirthdayBooking() { document.getElementById('birthdayPopup').style.display = 'flex'; }
+    function closeBirthdayPopup() { document.getElementById('birthdayPopup').style.display = 'none'; }
+    
     function openCustomCalc() { document.getElementById('customCalcPopup').style.display = 'flex'; }
     function closeCustomCalc() { document.getElementById('customCalcPopup').style.display = 'none'; }
 
@@ -577,7 +706,7 @@
     });
 
     function sendToWhatsapp(isCustom) {
-        let groom, bride, clientPhone, date, session, hall, notes, mediaOption, termsAgree, text;
+        let groom, bride, clientPhone, date, session, hall, notes, mediaOption, termsAgree, paymentClearAgree, text;
         
         if (!isCustom) {
             groom = document.getElementById('groomName').value;
@@ -589,12 +718,21 @@
             notes = document.getElementById('notes').value;
             mediaOption = document.querySelector('input[name="mediaShare"]:checked').value;
             termsAgree = document.getElementById('termsAgree').checked;
+            paymentClearAgree = document.getElementById('paymentClearAgree').checked;
             
             if(!groom || !bride || !date || !clientPhone) { alert('من فضلك املأ الأسماء، التاريخ، ورقم الواتساب!'); return; }
-            if(!termsAgree) { alert('يجب الموافقة على شرط إلغاء الحجز والديبوزيت!'); return; }
+            if(!paymentClearAgree) { alert('يرجى الموافقة على شرط تسديد الحساب يوم المناسبة!'); return; }
+            if(!termsAgree) { alert('يجب الموافقة على شرط إلغاء الحجز والعربون!'); return; }
+
+            let albumDetail = "";
+            if(isNormalPkgToggle) {
+                const selectVal = document.getElementById('albumTypeSelect').value;
+                albumDetail = (selectVal === 'acrylic') ? " [نوع الألبوم المختاري: ألبوم أكريليك]" : " [نوع الألبوم المختاري: ألبوم عادي]";
+            }
             
-            text = `أهلاً علي، حابب أستفسر عن توفر حجز:\n` +
-                   `📌 الطلب: ${currentPkg}\n` +
+            text = `أهلاً علي، حابب أستفسر عن توفر حجز و إرسال سكرين شوت العربون:\n` +
+                   `📌 الطلب: ${currentPkg}${albumDetail}\n` +
+                   `💰 السعر: ${currentBasePrice} EGP\n` +
                    `🤵 اسم العريس (EN): ${groom}\n` +
                    `👰 اسم العروسة (EN): ${bride}\n` +
                    `📱 رقم الواتساب: ${clientPhone}\n` +
@@ -602,7 +740,9 @@
                    `📸 مكان السيشن: ${session || 'لم يحدد بعد'}\n` +
                    `🏢 مكان القاعة: ${hall || 'لم يحدد بعد'}\n` +
                    `🌐 مشاركة الصور: ${mediaOption}\n` +
-                   `⚖️ شرط الديبوزيت والتأجيل: تم الاطلاع والموافقة ✅\n` +
+                   `💵 تصفية الحساب: موافق على تسديد باقي الحساب يوم المناسبة لسرعة الاستلام ✅\n` +
+                   `💳 تأكيد العربون (InstaPay): جاري إرفاق سكرين شوت تحويل العربون ✅\n` +
+                   `⚖️ شرط العربون والتأجيل: تم الاطلاع والموافقة ✅\n` +
                    `📝 ملاحظات العميل: ${notes || 'لا يوجد ملاحظات إضافية'}`;
         } else {
             groom = document.getElementById('custGroom').value;
@@ -614,6 +754,7 @@
             notes = document.getElementById('custNotes').value;
             mediaOption = document.querySelector('input[name="custMedia"]:checked').value;
             termsAgree = document.getElementById('custTerms').checked;
+            paymentClearAgree = document.getElementById('custPaymentClearAgree').checked;
             
             let selectedServices = [];
             checkboxes.forEach(item => {
@@ -622,13 +763,14 @@
             
             if(selectedServices.length === 0) { alert('من فضلك اختار خدمة واحدة على الأقل لتصميم باكدجك!'); return; }
             if(!groom || !bride || !date || !clientPhone) { alert('من فضلك املأ الأسماء، التاريخ، ورقم الواتساب!'); return; }
-            if(!termsAgree) { alert('يجب الموافقة على شرط إلغاء الحجز والديبوزيت!'); return; }
+            if(!paymentClearAgree) { alert('يرجى الموافقة على شرط تسديد الحساب يوم المناسبة!'); return; }
+            if(!termsAgree) { alert('يجب الموافقة على شرط إلغاء الحجز والعربون!'); return; }
             
             const totalCost = document.getElementById('totalPriceDisplay').innerText;
             
             text = `أهلاً علي، قمت بتصميم باكدج مخصصة عبر موقعك:\n` +
                    `🛠️ الخدمات المختارة:\n - ${selectedServices.join('\n - ')}\n` +
-                   `💰 السعر الإجمالي التلقائي: ${totalCost} EGP\n` +
+                   `💰 السعر الإجمالي: ${totalCost} EGP\n` +
                    `🤵 اسم العريس (EN): ${groom}\n` +
                    `👰 اسم العروسة (EN): ${bride}\n` +
                    `📱 رقم الواتساب: ${clientPhone}\n` +
@@ -636,10 +778,47 @@
                    `📸 مكان السيشن: ${session || 'لم يحدد بعد'}\n` +
                    `🏢 مكان القاعة: ${hall || 'لم يحدد بعد'}\n` +
                    `🌐 مشاركة الصور: ${mediaOption}\n` +
-                   `⚖️ شرط الديبوزيت والتأجيل: تم الاطلاع والموافقة ✅\n` +
+                   `💵 تصفية الحساب: موافق على تسديد باقي الحساب يوم المناسبة لسرعة الاستلام ✅\n` +
+                   `💳 تأكيد العربون (InstaPay): جاري إرفاق سكرين شوت تحويل العربون ✅\n` +
+                   `⚖️ شرط العربون والتأجيل: تم الاطلاع والموافقة ✅\n` +
                    `📝 ملاحظات العميل: ${notes || 'لا يوجد'}`;
         }
         
+        window.open(`https://wa.me/201505827390?text=${encodeURIComponent(text)}`, '_blank');
+    }
+
+    function sendBirthdayWhatsapp() {
+        const name = document.getElementById('bdayName').value;
+        const phone = document.getElementById('bdayPhone').value;
+        const date = document.getElementById('bdayDate').value;
+        const loc = document.getElementById('bdayLoc').value;
+        const notes = document.getElementById('bdayNotes').value;
+        const terms = document.getElementById('bdayTerms').checked;
+        const paymentClear = document.getElementById('bdayPaymentClearAgree').checked;
+
+        if(!name || !phone || !date) {
+            alert('من فضلك أدخل الاسم ورقم الموبايل وتاريخ المناسبة!');
+            return;
+        }
+        if(!paymentClear) {
+            alert('يرجى الموافقة على شرط تسديد باقي الحساب يوم المناسبة!');
+            return;
+        }
+        if(!terms) {
+            alert('برجاء الموافقة على شرط إلغاء الحجز والعربون!');
+            return;
+        }
+
+        const text = `أهلاً علي، حابب أأكد حجز سيشن عيد ميلاد (العرض الخاص 300 EGP):\n` +
+                     `👤 الاسم: ${name}\n` +
+                     `📱 رقم التواصل: ${phone}\n` +
+                     `📅 تاريخ المناسبة: ${date}\n` +
+                     `📍 المكان: ${loc || 'لم يحدد بعد'}\n` +
+                     `💵 تصفية الحساب: موافق على تسديد باقي الحساب يوم المناسبة لسرعة الاستلام ✅\n` +
+                     `💳 العربون (InstaPay): جاري إرفاق سكرين شوت تحويل العربون ✅\n` +
+                     `⚖️ شرط العربون والتأجيل: تم الاطلاع والموافقة ✅\n` +
+                     `📝 ملاحظات: ${notes || 'لا يوجد'}`;
+
         window.open(`https://wa.me/201505827390?text=${encodeURIComponent(text)}`, '_blank');
     }
 
